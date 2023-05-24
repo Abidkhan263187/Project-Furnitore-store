@@ -7,6 +7,8 @@ import './home.css'
 import Slider from './Slider';
 import { SlideCard } from './SlideCard';
 import { BestSeller } from './BestSeller';
+import { SecondNav } from './SecondNav';
+import Footer from './Footer';
 
 export const Home = () => {
 
@@ -51,14 +53,14 @@ export const Home = () => {
 
 
   return (
-    <div className='home'>
+    <><SecondNav /><div className='home'>
       <div>
         <Slideshow />
       </div>
 
       <div className='sbc'>
         <h1>Shop By Categories</h1>
-      </div >
+      </div>
       <div className='abid-cat-div'>
         <Link>
           <div>
@@ -154,7 +156,7 @@ export const Home = () => {
       </div>
 
 
-      <div className='abid-room-Container' >
+      <div className='abid-room-Container'>
         <div><h1>Shop By Room</h1></div>
         <div className='abid-shopby-room'>
 
@@ -175,7 +177,7 @@ export const Home = () => {
 
         <div className='Best-sellers-div'>
           <Carousel responsive={responsiveBestSeller}>
-            <BestSeller name={"Bolton Queen bed with Hydraulic storage in Wenge.."} price={"5,999"} mrp={"7,459"}img={"https://hometown.gumlet.io/media/cms/New%20desktop/bradford.jpg?dpr=1.0&q=70&w=576"} />
+            <BestSeller name={"Bolton Queen bed with Hydraulic storage in Wenge.."} price={"5,999"} mrp={"7,459"} img={"https://hometown.gumlet.io/media/cms/New%20desktop/bradford.jpg?dpr=1.0&q=70&w=576"} />
             <BestSeller name={"Prime 2 door wardrobe in Wenge Colour"} price={"12,999"} mrp={"19,999"} img={"https://hometown.gumlet.io/media/product/62/4453/13235/1.jpg?mode=fill&w=279.5&h=279.5&dpr=1.0"} />
 
             <BestSeller name={"Arrow PVC Office Chair in Black Colour"} price={"10,999"} mrp={"14,999"} img={"https://hometown.gumlet.io/media/product/34/9553/33603/1.jpg?mode=fill&w=279.5&h=279.5&dpr=1.0"} />
@@ -194,7 +196,10 @@ export const Home = () => {
         <h1>Top Offers</h1>
         <Slider />
       </div>
-    </div>
+      <div>
+        <Footer/>
+      </div>
+    </div></>
 
 
   )

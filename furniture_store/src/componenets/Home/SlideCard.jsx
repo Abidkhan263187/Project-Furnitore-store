@@ -12,7 +12,7 @@ export const SlideCard = ({img,name}) => {
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum doloribus ducimus
       in sapiente facere asperiores amet odio delectus mollitia totam.</p>
       <div className='abid-know-more'>
-    <p>know More </p>
+    <p>Know More </p>
     <span style={{color:"gray"}}> <i className="fa-solid fa-arrow-right fa-beat-fade"></i></span>
       </div>
   </div>

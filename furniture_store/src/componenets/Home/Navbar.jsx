@@ -9,7 +9,7 @@ export const Navbar = () => {
             <div className='abid-nav-container'>
 
                 <div className='abid-nav1'>
-                    <Link><h2 style={{border:"1px solid",width:"50px",borderRadius:"20px",background:"black",color:"white"}}><i class="fa-solid fa-m"></i></h2></Link> 
+                    <Link><h2 style={{border:"1px solid",width:"50px",background:"black",color:"white"}}><i class="fa-solid fa-m"></i></h2></Link> 
                     <Link><h4>Chairs</h4></Link>
                     <Link><h4>Tables</h4></Link>
                     <Link><h4>Lamps</h4></Link>
@@ -19,7 +19,7 @@ export const Navbar = () => {
 
                 </div>
                 <div className='abid-nav2'>
-                    <div style={{background:"white",paddingLeft:"20px"}}>
+                    <div style={{background:"white",paddingLeft:"20px",borderRadius:"5px"}}>
                         <button style={{background:"white",border:"none"}}> <i class="fa-solid fa-magnifying-glass"></i></button>
                    
                     <input type="search " placeholder='search' className='abid-serach-nav'  />

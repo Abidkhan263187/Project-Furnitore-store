@@ -41,7 +41,7 @@ const Slider = () => {
   }, [scrollDirection]);
 
   return (
-    <div className="slider" ref={sliderRef}>
+    <div className="slider-abid" ref={sliderRef}>
         
       <div className="slide">
         <div>
