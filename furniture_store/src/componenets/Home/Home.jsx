@@ -9,6 +9,7 @@ import { SlideCard } from './SlideCard';
 import { BestSeller } from './BestSeller';
 import { SecondNav } from './SecondNav';
 import Footer from './Footer';
+import { Category } from './Category';
 
 export const Home = () => {
 
@@ -62,96 +63,24 @@ export const Home = () => {
         <h1>Shop By Categories</h1>
       </div>
       <div className='abid-cat-div'>
-        <Link>
-          <div>
-            <img src="https://hometown.gumlet.io/media/cms/hometownnew/desktopnewhomepage/shopbycat/shopbycat01.png?dpr=1.0&q=70&w=200" alt="" />
-            <h4>Furniture</h4>
-          </div>
-        </Link>
 
-
-        <Link>
-          <div>
-            <img src="https://hometown.gumlet.io/media/cms/hometownnew/desktopnewhomepage/shopbycat/shopbycat02.png?dpr=1.0&q=70&w=200" alt="" />
-            <h4>Sofas</h4>
-          </div>
-        </Link>
-
-        <Link>
-          <div>
-            <img src="https://hometown.gumlet.io/media/cms/hometownnew/desktopnewhomepage/shopbycat/shopbycat03.png?dpr=1.0&q=70&w=200" alt="" />
-            <h4>Reclines</h4>
-          </div>
-        </Link>
-
-        <Link>
-          <div>
-            <img src="https://hometown.gumlet.io/media/cms/icons/bahubali-dining.png?dpr=1.0&q=70&w=200" alt="" />
-            <h4>Dinning Set</h4>
-          </div>
-        </Link>
-
-        <Link>
-          <div>
-            <img src="https://hometown.gumlet.io/media/cms/icons/astra.png?dpr=1.0&q=70&w=200" alt="" />
-            <h4>Bedroom</h4>
-          </div>
-        </Link>
-        <Link>
-          <div>
-            <img src=" https://hometown.gumlet.io/media/cms/hometownnew/desktopnewhomepage/shopbycat/shopbycat08.png?dpr=1.0&q=70&w=200" alt="" />
-            <h4>BookShelves</h4>
-          </div>
-        </Link>
-
+        <Category name={"Furniture"} img={"https://hometown.gumlet.io/media/cms/hometownnew/desktopnewhomepage/shopbycat/shopbycat01.png?dpr=1.0&q=70&w=200"} />
+        <Category name={"Sofas"} img={"https://hometown.gumlet.io/media/cms/hometownnew/desktopnewhomepage/shopbycat/shopbycat02.png?dpr=1.0&q=70&w=200"} />
+        <Category name={"Reclines"} img={"https://hometown.gumlet.io/media/cms/hometownnew/desktopnewhomepage/shopbycat/shopbycat03.png?dpr=1.0&q=70&w=200"} />
+        <Category name={"Dinning Set"} img={"https://hometown.gumlet.io/media/cms/icons/bahubali-dining.png?dpr=1.0&q=70&w=200"} />
+        <Category name={"Bedroom"} img={"https://hometown.gumlet.io/media/cms/icons/astra.png?dpr=1.0&q=70&w=200"} />
+        <Category name={"BookShelves"} img={" https://hometown.gumlet.io/media/cms/hometownnew/desktopnewhomepage/shopbycat/shopbycat08.png?dpr=1.0&q=70&w=200"} />
 
       </div>
 
-
-
       <div className='abid-cat-div2'>
-        <Link>
-          <div>
-            <img src="https://hometown.gumlet.io/media/cms/New%20desktop/shoerack1.png?w=200&dpr=1.0" alt="" />
-            <h4>Shoe Rocks</h4>
-          </div>
-        </Link>
 
-
-        <Link>
-          <div>
-            <img src="https://hometown.gumlet.io/media/cms/hometownnew/desktopnewhomepage/shopbycat/shopbycat06.png?w=200&dpr=1.0" alt="" />
-            <h4>Wardrobes</h4>
-          </div>
-        </Link>
-
-        <Link>
-          <div>
-            <img src="https://hometown.gumlet.io/media/cms/icons/front-mattres1.png?w=200&dpr=1.0" alt="" />
-            <h4>Mattresses</h4>
-          </div>
-        </Link>
-
-        <Link>
-          <div>
-            <img src="https://hometown.gumlet.io/media/cms/hometownnew/desktopnewhomepage/shopbycat/shopbycat09.png?w=200&dpr=1.0" alt="" />
-            <h4>Decors</h4>
-          </div>
-        </Link>
-
-        <Link>
-          <div>
-            <img src="https://hometown.gumlet.io/media/cms/hometownnew/desktopnewhomepage/shopbycat/shopbycat11.png?w=200&dpr=1.0" alt="" />
-            <h4>Furnishing</h4>
-          </div>
-        </Link>
-        <Link>
-          <div>
-            <img src="https://hometown.gumlet.io/media/cms/hometownnew/desktopnewhomepage/shopbycat/shopbycat12.png?w=200&dpr=1.0 " alt="" />
-            <h4>Tableware & Kithenware</h4>
-          </div>
-        </Link>
-
+        <Category name={"Shoe Rocks"} img={"https://hometown.gumlet.io/media/cms/New%20desktop/shoerack1.png?w=200&dpr=1.0"} />
+        <Category name={"Wardrobes"} img={"https://hometown.gumlet.io/media/cms/hometownnew/desktopnewhomepage/shopbycat/shopbycat06.png?w=200&dpr=1.0"} />
+        <Category name={"Mattresses"} img={"https://hometown.gumlet.io/media/cms/icons/front-mattres1.png?w=200&dpr=1.0"} />
+        <Category name={"Decors"} img={"https://hometown.gumlet.io/media/cms/hometownnew/desktopnewhomepage/shopbycat/shopbycat09.png?w=200&dpr=1.0"} />
+        <Category name={"Furnishing"} img={"https://hometown.gumlet.io/media/cms/hometownnew/desktopnewhomepage/shopbycat/shopbycat11.png?w=200&dpr=1.0"} />
+        <Category name={"Tableware & Kithenware"} img={"https://hometown.gumlet.io/media/cms/hometownnew/desktopnewhomepage/shopbycat/shopbycat12.png?w=200&dpr=1.0"} />
 
       </div>
 
@@ -161,7 +90,6 @@ export const Home = () => {
         <div className='abid-shopby-room'>
 
           <Carousel responsive={responsive}>
-
             <SlideCard name={"Living Room "} img={"https://hometown.gumlet.io/media/cms/New%20desktop/bradford.jpg?dpr=1.0&q=70&w=576"} />
             <SlideCard name={"Dinning "} img={"https://hometown.gumlet.io/media/cms/New%20desktop/Dining-setA1.jpg?dpr=1.0&q=70&w=576"} />
             <SlideCard name={"Bed Room"} img={"https://hometown.gumlet.io/media/cms/New%20desktop/Casablanca-Bed_1.jpg?w=576&dpr=1.0"} />
@@ -179,26 +107,17 @@ export const Home = () => {
           <Carousel responsive={responsiveBestSeller}>
             <BestSeller name={"Bolton Queen bed with Hydraulic storage in Wenge.."} price={"5,999"} mrp={"7,459"} img={"https://hometown.gumlet.io/media/cms/New%20desktop/bradford.jpg?dpr=1.0&q=70&w=576"} />
             <BestSeller name={"Prime 2 door wardrobe in Wenge Colour"} price={"12,999"} mrp={"19,999"} img={"https://hometown.gumlet.io/media/product/62/4453/13235/1.jpg?mode=fill&w=279.5&h=279.5&dpr=1.0"} />
-
             <BestSeller name={"Arrow PVC Office Chair in Black Colour"} price={"10,999"} mrp={"14,999"} img={"https://hometown.gumlet.io/media/product/34/9553/33603/1.jpg?mode=fill&w=279.5&h=279.5&dpr=1.0"} />
             <BestSeller name={"Saville King Size Bed with Hydraulic Storage in Dark..."} price={"42,999"} mrp={"59,459"} img={"https://hometown.gumlet.io/media/product/07/8963/35577/1.jpg?mode=fill&w=279.5&h=279.5&dpr=1.0"} />
             <BestSeller name={"Bolton King bed with Box storage in Wenge Colour"} price={"29,999"} mrp={"49,999"} img={"https://hometown.gumlet.io/media/product/43/8153/54285/1.jpg?mode=fill&w=279.5&h=279.5&dpr=1.0"} />
             <BestSeller name={"Allen 4 door wardrobe in Walnut Colour"} price={"11,999"} mrp={"2,9999"} img={"https://hometown.gumlet.io/media/product/94/3063/18556/1.jpg?mode=fill&w=279.5&h=279.5&dpr=1.0"} />
 
-
           </Carousel>
-
-
         </div>
       </div>
 
-      <div className="abid-slide-div">
-        <h1>Top Offers</h1>
-        <Slider />
-      </div>
-      <div>
-        <Footer/>
-      </div>
+      <div className="abid-slide-div"> <h1>Top Offers</h1> <Slider /> </div>
+      <div> <Footer /></div>
     </div></>
 
 

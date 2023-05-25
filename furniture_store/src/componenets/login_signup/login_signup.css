@@ -1,0 +1,172 @@
+body {
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+  }
+  
+  .login-container {
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 80px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .login-container h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .form-group input[type="submit"] {
+    background-color:#ffcc01;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-group input[type="submit"]:hover {
+    background-color:#ff9c0d;
+  }
+  
+  .form-help {
+    font-size: 12px;
+    color: #777;
+    margin-top: 10px;
+  }
+  
+  .footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 12px;
+    color: #777;
+  }
+  
+  .footer a {
+    color: #777;
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
+
+  /* css for signup  */
+  body {
+    background-color: #f0f2f5;
+    font-family: Arial, sans-serif;
+  }
+  
+  .abid-signup-container {
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 80px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .abid-heading {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .abid-form-group {
+    margin-bottom: 15px;
+  }
+  
+  .abid-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .abid-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+  }
+  
+  .abid-submit-button {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .abid-submit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .abid-form-help {
+    font-size: 12px;
+    color: #777;
+    margin-top: 5px;
+  }
+  
+  .abid-link {
+    color: #777;
+    text-decoration: none;
+  }
+  
+  .abid-link:hover {
+    text-decoration: underline;
+  }
+  
+  .abid-footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 12px;
+    color: #777;
+  }
+  

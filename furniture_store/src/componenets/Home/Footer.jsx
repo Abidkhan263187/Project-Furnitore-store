@@ -49,11 +49,8 @@ const Footer = () => {
     <Link>Term & Conditions</Link>
    </div>
       </div>
-
-
-
       <div className='footer-three-abid'>
-<div>@ 2021 Abid All Right Reserved</div>
+<div>@ 2023 AAMM All Right Reserved</div>
 <div className='abid-social-modes'>
   <Link><i class="fa-brands fa-facebook"></i></Link>
   <Link><i class="fa-brands fa-linkedin"></i></Link>

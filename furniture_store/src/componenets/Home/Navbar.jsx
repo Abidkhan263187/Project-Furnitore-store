@@ -9,7 +9,7 @@ export const Navbar = () => {
             <div className='abid-nav-container'>
 
                 <div className='abid-nav1'>
-                    <Link><h2 style={{border:"1px solid",width:"50px",background:"black",color:"white"}}><i class="fa-solid fa-m"></i></h2></Link> 
+                    <Link to={"/"} ><h2 style={{border:"1px solid",width:"50px",background:"black",color:"white"}}><i class="fa-solid fa-m"></i></h2></Link> 
                     <Link><h4>Chairs</h4></Link>
                     <Link><h4>Tables</h4></Link>
                     <Link><h4>Lamps</h4></Link>
@@ -25,9 +25,10 @@ export const Navbar = () => {
                     <input type="search " placeholder='search' className='abid-serach-nav'  />
                     </div>
               
-                   <Link><p><i class="fa-solid fa-heart"></i></p></Link> 
+                   <Link to={'/fav'}><p><i class="fa-solid fa-heart"></i></p></Link> 
                    <Link> <p><i class="fa-solid fa-shuffle"></i></p></Link> 
-                   <Link> <p><i class="fa-sharp fa-solid fa-cart-shopping"></i></p></Link> 
+                   <Link to={'/cart'}> <p><i class="fa-sharp fa-solid fa-cart-shopping"></i></p></Link> 
+                   <Link to={'/signup'}><p><i class="fa-solid fa-user"></i></p></Link>
                 </div>
                 <div className='abid-nav3'>
                 <Link>  <p><i class="fa-solid fa-bars"></i></p></Link> 
