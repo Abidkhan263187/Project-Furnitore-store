@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 
+
 const Cart = () => {
   const [cartItems, setCartItems] = useState([
     {
@@ -123,6 +124,7 @@ const Cart = () => {
           Checkout
         </button>
       </div>
+      
     </div>
   );
 };
