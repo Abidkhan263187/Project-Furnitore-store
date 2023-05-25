@@ -25,14 +25,14 @@ const Slider = () => {
       slider.scrollLeft += scrollDirection;
     };
 
-    sliderInterval = setInterval(scroll, 10);
+    sliderInterval = setInterval(scroll, 20);
 
     slider.addEventListener('mouseenter', () => {
       clearInterval(sliderInterval);
     });
 
     slider.addEventListener('mouseleave', () => {
-      sliderInterval = setInterval(scroll, 10);
+      sliderInterval = setInterval(scroll, 20);
     });
 
     return () => {
@@ -41,7 +41,7 @@ const Slider = () => {
   }, [scrollDirection]);
 
   return (
-    <div className="slider-abid" ref={sliderRef}>
+    <div className="slider-abid"  ref={sliderRef}>
         
       <div className="slide">
         <div>

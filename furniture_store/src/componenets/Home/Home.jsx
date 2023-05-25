@@ -54,7 +54,9 @@ export const Home = () => {
 
 
   return (
-    <><SecondNav /><div className='home'>
+    <>
+    <SecondNav />
+    <div className='home'>
       <div>
         <Slideshow />
       </div>

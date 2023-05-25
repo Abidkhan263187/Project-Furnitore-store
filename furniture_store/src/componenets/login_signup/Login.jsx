@@ -48,6 +48,7 @@ function LoginPage() {
           <input type="submit" value="Sign In" />
           <div className="form-help">
             <Link to="#">Forgot your password?</Link>
+            <Link style={{marginLeft:"10px"}} to={'/signup'}>Back to SignUp</Link>
           </div>
         </div>
       </form>

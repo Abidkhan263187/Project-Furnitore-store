@@ -1,18 +1,19 @@
-*{
+* {
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.abid-nav1{
+.abid-nav1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     /* border: 1px solid; */
     width: 50%;
 }
-.abid-nav2{
+
+.abid-nav2 {
     display: flex;
     justify-content: space-between;
     /* border: 1px solid; */
@@ -20,33 +21,105 @@
     width: 25%;
     margin-left: 50px;
 }
-.abid-serach-nav{
+.abid-search-div{
+    /* border: 1px solid; */
+    background-color:white;
+    padding-left:20px;
+    border-radius:5px;
+}
+.abid-serach-nav {
     border-radius: 10px;
     border: none;
-   
-    border: none;
     outline: none;
+    /* border: 1px solid; */
     padding: 5px 10px 5px 20px;
 }
-.abid-nav3{
+
+.abid-nav3 {
     display: flex;
     justify-content: space-between;
     /* border: 1px solid; */
     width: 5%;
 }
 
-.abid-nav-container{
+.abid-nav-container {
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
-    background-color:#d4d4d4;
+    background-color: #d4d4d4;
     align-items: center;
+
+}
+
+.abid-nav-container a {
+    text-decoration: none;
+    color: #323232;
+    transform: scale(.91);
+}
+
+.abid-nav-container a:hover {
+    text-decoration: underline;
+    transform: scale(1);
+}
+
+@media (max-width: 767px) {
+    /* CSS properties for small screens */
+    .abid-search-div{
+        display: flex;
+        /* border: 1px solid; */
+        width: 60%;
+       
+        
+    }
+    .abid-serach-nav{
+        width: 100%;
+    }
+    .abid-nav2 { 
+        width: 100%;  
+        /* border: 1px solid; */
+    }
+    .abid-nav3{
+        display: none;
+    }
+    .abid-a{
+        display: none;
+    }
+  }
+
+  /* Styles for medium screens */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    /* CSS properties for medium screens */
+    .abid-search-div{
+        display: flex;
+        /* border: 1px solid; */
+        width: 60%;
+        background-color:white;
+        padding-left:20px;
+        border-radius:5px;
+        
+    }
+    .abid-serach-nav{
+        width: 100%;
+    }
+    .abid-nav2 { 
+        width: 30%;  
+    }
+    .abid-nav3{
+        display: none;
+    }
+  }
+
+  /* Styles for large screens */
+  @media (min-width: 1024px) {
    
-}
-.abid-nav-container a{
-text-decoration: none;
-color: #323232;
-}
-.abid-nav-container a:hover{
-text-decoration: underline;
-}
+    .abid-search-div{
+        display: flex;
+        width: 70%;
+    }
+    
+    .abid-nav2 { 
+        width: 30%;  
+      
+        /* border: 2px solid; */
+    }
+  }

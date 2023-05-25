@@ -4,10 +4,10 @@ body {
   }
   
   .login-container {
-    width: 400px;
+    width: 380px;
     margin: 0 auto;
-    margin-top: 80px;
-    padding: 40px;
+    margin-top: 40px;
+    padding: 30px;
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -32,6 +32,9 @@ body {
   
   .form-group {
     margin-bottom: 20px;
+  }
+  .form-help a{
+   font-weight: 700;
   }
   
   .form-group label {
@@ -89,7 +92,6 @@ body {
     text-decoration: underline;
   }
   
-
   /* css for signup  */
   body {
     background-color: #f0f2f5;
@@ -98,8 +100,8 @@ body {
   
   .abid-signup-container {
     width: 400px;
-    margin: 0 auto;
-    margin-top: 80px;
+    margin: 3% auto;
+    /* margin-top: 80px; */
     padding: 20px;
     background-color: #fff;
     border-radius: 5px;
@@ -126,7 +128,7 @@ body {
   
   .abid-input {
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     border: 1px solid #ccc;
     border-radius: 3px;
     font-size: 14px;
