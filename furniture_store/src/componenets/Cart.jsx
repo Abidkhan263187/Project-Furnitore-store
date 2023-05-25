@@ -1,18 +1,5 @@
 
 import React, { useState } from 'react';
-import {
-  Box,
-  Text,
-  Button,
-  IconButton,
-  Flex,
-  Stack,
-  Spacer,
-  Divider,
-  Image,
-  StackDivider,
-} from '@chakra-ui/react';
-import { AddIcon, MinusIcon } from '@chakra-ui/icons';
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([
@@ -42,10 +29,6 @@ const Cart = () => {
     },
   ]);
 
-  const getTotalPrice = () => {
-    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
-  };
-
   const increaseQuantity = (itemId) => {
     setCartItems((prevItems) =>
       prevItems.map((item) => {
@@ -68,67 +51,83 @@ const Cart = () => {
     );
   };
 
+  const getTotalPrice = () => {
+    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  };
+
   return (
-    <Box p={4} >
-      <Text fontSize="xl" mb={4}>
-        Your Order
-      </Text>
+    <div style={{ padding: '30px' }}>
+      <h1 style={{ fontSize: '30px', marginBottom: '20px',color:'blue' }}>Your Cart</h1>
 
-      <Stack spacing={4} >
-        {cartItems.map((item) => (
-          <Box
-         
-            key={item.id}
-            borderWidth="1px"
-            borderRadius="md"
-            p={4}
-            boxShadow="md"
-            display="flex"
-            alignItems="center"
-          >
-            <Image src={item.imageSrc} alt={item.name} boxSize="80px" objectFit="cover" mr={4} />
-            <Flex align="center" >
-              <Text>{item.name}</Text>
-              <Spacer />
-              <Text fontWeight="bold">${item.price}</Text>
-            </Flex>
-            <Flex align="center" mt={2}>
-              <IconButton
-                icon={<MinusIcon />}
-                aria-label="Decrease Quantity"
+      {cartItems.map((item) => (
+        <div
+          key={item.id}
+          style={{
+            border: '1px solid #ccc',
+            borderRadius: '4px',
+            padding: '15px',
+            boxShadow: '0 1px 2px rgba(0, 0, 0, 0.1)',
+            marginBottom: '20px',
+            
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <img
+              src={item.imageSrc}
+              alt={item.name}
+              style={{ width: '120px', height: '120px', marginRight: '10px', objectFit: 'cover' }}
+            />
+            <div style={{ flex: 1 }}>
+              <div style={{ fontWeight: 'bold', marginBottom: '10px' ,fontWeight: 'bold', fontSize: '20px'}}>{item.name}</div>
+              <div style={{ fontSize: '20px', color: '#666',fontWeight: 'bold' }}>${item.price}</div>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', marginTop: '4px', marginRight: '20px' }}>
+              <button
                 onClick={() => decreaseQuantity(item.id)}
-                size="sm"
                 disabled={item.quantity <= 1}
-              />
-              <Text mx={2}>{item.quantity}</Text>
-              <IconButton
-                icon={<AddIcon />}
-                aria-label="Increase Quantity"
+                style={{ marginRight: '10px', padding: '8px 10px', background: '#007bff',
+                color: '#fff', }}
+              >
+                -
+              </button>
+              <span style={{ margin: '0 10px' , fontWeight: 'bold', fontSize: '20px'}}>{item.quantity}</span>
+              <button
                 onClick={() => increaseQuantity(item.id)}
-                size="sm"
-              />
-            </Flex>
-          </Box>
-        ))}
-      </Stack>
+                style={{ marginRight: '10px', padding: '8px 10px', background: '#007bff',
+                color: '#fff',}}
+              >
+                +
+              </button>
+            </div>
+          </div>
+        </div>
+      ))}
 
-      <Divider my={4} />
-
-      <Flex justify="flex-end">
-        <Text fontSize="lg" fontWeight="bold">
-          Total: ${getTotalPrice()}
-        </Text>
-      </Flex>
-
-      <Button colorScheme="blue" mt={4} width="full">
-        Checkout
-      </Button>
-    </Box>
+      <div style={{ borderTop: '1px solid #ccc', marginTop: '20px', paddingTop: '10px' }}>
+        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+          <div style={{ fontWeight: 'bold', fontSize: '20px' }}>Total: ${getTotalPrice()}</div>
+        </div>
+        <button
+          style={{
+            width: '100%',
+            marginTop: '20px',
+            padding: '10px',
+            background: '#ffcc01',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer',
+            fontSize: '16px',
+          }}
+        >
+          Checkout
+        </button>
+      </div>
+    </div>
   );
 };
 
 export default Cart;
-
 
 
 
