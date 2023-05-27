@@ -5,23 +5,18 @@ body {
   
   .login-container {
     width: 380px;
-    margin: 0 auto;
-    margin-top: 40px;
+    margin: 5% auto 10% auto;
+   
     padding: 30px;
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 0.5s ease;
+    animation: fadeIn 0.3s ease;
+    background-color:#d4D4D4;
+    
   }
   
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
+  
   
   .login-container h2 {
     font-size: 24px;
@@ -35,6 +30,7 @@ body {
   }
   .form-help a{
    font-weight: 700;
+   color: #333;
   }
   
   .form-group label {
@@ -46,12 +42,14 @@ body {
   }
   
   .form-group input {
-    width: 100%;
+    width: 85%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
     color: #555;
+    background-color: rgb(252, 250, 250);
+    outline: none;
   }
   
   .form-group input[type="submit"] {
@@ -74,6 +72,10 @@ body {
     font-size: 12px;
     color: #777;
     margin-top: 10px;
+   
+  }
+  .form-help a:hover{
+    text-decoration: none;
   }
   
   .footer {
@@ -100,12 +102,14 @@ body {
   
   .abid-signup-container {
     width: 400px;
-    margin: 3% auto;
+    margin: 3% auto 5% auto;
     /* margin-top: 80px; */
     padding: 20px;
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease;
+    background-color:#d4D4D4;
   }
   
   .abid-heading {
@@ -117,7 +121,10 @@ body {
   .abid-form-group {
     margin-bottom: 15px;
   }
-  
+ 
+  h2{
+    color: #353434;
+  }
   .abid-label {
     display: block;
     font-size: 14px;
@@ -127,11 +134,13 @@ body {
   }
   
   .abid-input {
-    width: 100%;
+    width: 80%;
+    outline: none;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 3px;
     font-size: 14px;
+    background-color: rgb(252, 250, 250);
   }
   
   .abid-submit-button {
@@ -152,16 +161,18 @@ body {
   
   .abid-form-help {
     font-size: 12px;
-    color: #777;
+    color: #555;
     margin-top: 5px;
   }
-  
-  .abid-link {
-    color: #777;
+  .abid-form-help a{
+    text-decoration: none;
+  }
+  #abid-link {
+    color: #444;
     text-decoration: none;
   }
   
-  .abid-link:hover {
+  #abid-link:hover {
     text-decoration: underline;
   }
   
@@ -169,6 +180,47 @@ body {
     text-align: center;
     margin-top: 30px;
     font-size: 12px;
-    color: #777;
+    color: #555;
   }
+  
+  @media (max-width: 767px) {
+    /* CSS properties for small screens */
+    .login-container {
+      width: 300px;
+
+    }
+    .login-container h2 {
+      font-size: 20px;
+     
+    }
+    .abid-signup-container {
+      width: 300px;
+      margin: 8% auto;
+      padding: 10px 30px;
+     
+    }
+  .abid-heading {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  }
+
+  /* Styles for medium screens */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    /* CSS properties for medium screens */
+    .login-container {
+      width: 380px;
+     margin: 15% auto;
+
+    }
+    .login-container h2 {
+      font-size: 24px;
+     
+    }
+  }
+
+  /* Styles for large screens */
+
+  /* shake concept  */
   

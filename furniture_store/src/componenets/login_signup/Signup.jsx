@@ -2,29 +2,35 @@ import React, { useState } from "react";
 import "./login_signup.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Footer from "../Home/Footer";
+import axios from "axios"
 
 function SignupPage() {
     const navigate = useNavigate()
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+
+    const [sign, setSign] = useState({
+        name: "",
+        email: '',
+        password: ''
+    })
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Perform form submission logic here
-        console.log("Form submitted");
-        console.log("Name:", name);
-        console.log("Email:", email);
-        console.log("Password:", password);
-        // Reset form fields
-        setName("");
-        setEmail("");
-        setPassword("");
+        
+        if (sign.email === '' || sign.name === '' || sign.password === '') {
+            alert("fill all the field")
+            setSign({ ...sign, email: '', password: "" })
+            return
+        }
+        axios.post(`  http://localhost:8080/users`, sign)
+        console.log(sign)
+        alert("Account Created Succesfully")
         navigate('/login')
+        setSign({ ...sign, name: '', email: '', password: '' })
     };
 
     return (
-        <div className="signup-container abid-signup-container">
+        <><div className="signup-container abid-signup-container">
             <h2 className="abid-heading">Create an Account</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group abid-form-group">
@@ -33,11 +39,9 @@ function SignupPage() {
                         type="text"
                         id="name"
                         name="name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        className="abid-input"
-
-                    />
+                        value={sign.name}
+                        onChange={(e) => setSign({ ...sign, [e.target.name]: e.target.value })}
+                        className="abid-input" />
                 </div>
                 <div className="form-group abid-form-group">
                     <label className="abid-label">Email</label>
@@ -45,11 +49,9 @@ function SignupPage() {
                         type="email"
                         id="email"
                         name="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        className="abid-input"
-
-                    />
+                        value={sign.email}
+                        onChange={(e) => setSign({ ...sign, [e.target.name]: e.target.value })}
+                        className="abid-input" />
                 </div>
                 <div className="form-group abid-form-group">
                     <label className="abid-label">Password</label>
@@ -57,11 +59,9 @@ function SignupPage() {
                         type="password"
                         id="password"
                         name="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        className="abid-input"
-
-                    />
+                        value={sign.password}
+                        onChange={(e) => setSign({ ...sign, [e.target.name]: e.target.value })}
+                        className="abid-input" />
                 </div>
                 <div className="form-group abid-form-group">
                     <input type="submit" value="Sign Up" className="abid-submit-button" />
@@ -71,9 +71,13 @@ function SignupPage() {
                 </div>
             </form>
             <div className="footer abid-footer">
-                Already have an account? <Link to={"/login"} className="abid-link">Sign In</Link>
+                Already have an account? <Link to={"/login"} id="abid-link">Sign In</Link>
             </div>
         </div>
+            <div>
+                <Footer />
+            </div>
+        </>
     );
 }
 
