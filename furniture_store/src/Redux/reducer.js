@@ -1,7 +1,9 @@
-import { AUTH, PERMIT } from "./actiontypes";
+import { AUTH, CARTARRAY, PERMIT, SINGLE } from "./actiontypes";
 const inituserArr={
     userArr:[],
-    access:false
+    access:false,
+    single:{},
+    cart:[]
 }
 
 export const reducer=(state=inituserArr,action)=>{
@@ -13,6 +15,12 @@ export const reducer=(state=inituserArr,action)=>{
         case PERMIT:{
             return{...state,access:true}
         }
+        case SINGLE:{
+            return{...state,single:action.payload}
+        }
+        // case CARTARRAY:{
+        //     return{...state,cart:action.payload}
+        // }
     }
     return state;
 }

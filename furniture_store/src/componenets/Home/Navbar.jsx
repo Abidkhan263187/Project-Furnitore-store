@@ -3,17 +3,18 @@ import { Link } from 'react-router-dom'
 import './nav.css'
 export const Navbar = () => {
 
-   
+   let id=2;
     return (
         <>
             <div className='abid-nav-container'>
 
                 <div className='abid-nav1'>
                     <Link to={"/"} ><h2 style={{border:"1px solid",width:"50px",background:"black",color:"white"}}><i class="fa-solid fa-m"></i></h2></Link> 
-                    <Link className='abid-a'><h4>Chairs</h4></Link>
+                    <Link className='abid-a'><h4 id="h4">Chairs</h4> </Link>
+
                     <Link className='abid-a'><h4>Tables</h4></Link>
                     <Link className='abid-a'><h4>Lamps</h4></Link>
-                    <Link className='abid-a'><h4>Sofas</h4></Link>
+                    <Link to={`/sofas/${id}`} className='abid-a'><h4>Sofas</h4></Link>
                     <Link className='abid-a'><h4>Cases</h4></Link>
                     <Link className='abid-a'><h4>Others</h4></Link>
 

@@ -16,13 +16,13 @@ function SignupPage() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
+
         if (sign.email === '' || sign.name === '' || sign.password === '') {
             alert("fill all the field")
             setSign({ ...sign, email: '', password: "" })
             return
         }
-        axios.post(`  http://localhost:8080/users`, sign)
+        axios.post(`https://myjson.onrender.com/users`, sign)
         console.log(sign)
         alert("Account Created Succesfully")
         navigate('/login')
@@ -65,8 +65,8 @@ function SignupPage() {
                 </div>
                 <div className="form-group abid-form-group">
                     <input type="submit" value="Sign Up" className="abid-submit-button" />
-                    <div className="form-help abid-form-help">
-                        By signing up, you agree to our <Link className="abid-link">Terms of Service</Link> and <Link className="abid-link">Privacy Policy</Link>.
+                    <div className="abid-form-help-s">
+                        By signing up, you agree to our <Link id="abid-link-s">Terms of Service</Link> and <Link id="abid-link-s">Privacy Policy</Link>.
                     </div>
                 </div>
             </form>

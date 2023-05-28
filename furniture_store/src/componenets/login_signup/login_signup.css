@@ -6,7 +6,7 @@ body {
   .login-container {
     width: 380px;
     margin: 5% auto 10% auto;
-   
+   padding-left: 40px;
     padding: 30px;
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
@@ -16,7 +16,9 @@ body {
     
   }
   
-  
+  form{
+    margin-left: 20px;
+  }
   
   .login-container h2 {
     font-size: 24px;
@@ -27,6 +29,7 @@ body {
   
   .form-group {
     margin-bottom: 20px;
+    /* margin-left: 30px; */
   }
   .form-help a{
    font-weight: 700;
@@ -42,7 +45,7 @@ body {
   }
   
   .form-group input {
-    width: 85%;
+    width: 90%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -58,8 +61,11 @@ body {
     font-size: 16px;
     font-weight: 700;
     border: none;
+    width: 40%;
+    display: block;
+    margin: 0px 80px ;
     border-radius: 5px;
-    padding: 12px 20px;
+    padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
@@ -72,7 +78,11 @@ body {
     font-size: 12px;
     color: #777;
     margin-top: 10px;
+    margin-left: 20px;
    
+  }
+   .form-help a{
+    text-decoration: underline;
   }
   .form-help a:hover{
     text-decoration: none;
@@ -87,11 +97,12 @@ body {
   
   .footer a {
     color: #777;
-    text-decoration: none;
+    text-decoration: underline;
   }
   
   .footer a:hover {
     text-decoration: underline;
+    
   }
   
   /* css for signup  */
@@ -120,6 +131,7 @@ body {
   
   .abid-form-group {
     margin-bottom: 15px;
+    margin-left: 20px;
   }
  
   h2{
@@ -167,8 +179,16 @@ body {
   .abid-form-help a{
     text-decoration: none;
   }
-  #abid-link {
-    color: #444;
+  .abid-form-help-s{
+    margin-left: 5px;
+    font-size: 12px;
+    color: #777;
+    margin-top: 10px;
+    /* background-color: gray; */
+    
+  }
+  #abid-link-s{
+    color: #2d2d2d;
     text-decoration: none;
   }
   
@@ -203,6 +223,13 @@ body {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 20px;
+  }
+  .form-group input[type="submit"] {
+   
+    margin: 0px 50px ;
+    padding-right: 75px;
+  
+    
   }
   }
 
