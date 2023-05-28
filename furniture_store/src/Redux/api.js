@@ -22,7 +22,7 @@ export const getProduct=(id)=>(dispatch)=>{
 export  const addtoCart=(product)=>(dispatch)=>{
 
     axios.post(`  http://localhost:8080/furnitureCart`,product).then(({data})=>{
-        console.log(data);
+        console.log(data)
     }).catch((error)=>{
         console.log(error)
     })
