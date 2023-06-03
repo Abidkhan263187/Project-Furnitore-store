@@ -13,14 +13,7 @@ import { useParams } from 'react-router-dom';
 const ItemDescription = () => {
     const { id } = useParams()
     const dispatch = useDispatch()
-    const {single}=useSelector((store)=>{
-        return store
-    })
-    const {image,name,price,rating,discount,mrp}=useSelector((store)=>{
-        return store.single
-    })
-    const [selectedImage, setSelectedImage] = useState(image);
-
+    
     const responsive = {
         superLargeDesktop: {
             // the naming can be any, depends on you.
@@ -55,10 +48,18 @@ const ItemDescription = () => {
         dispatch(addtoCart(single))
 
     }
+    const {single}=useSelector((store)=>{
+        return store
+    })
+    const {image,name,price,rating,discount,mrp}=useSelector((store)=>{
+        return store.single
+    })
+    const [selectedImage, setSelectedImage] = useState(image);
+     console.log(image)
     return (
         <><div className="desc-container" >
 
-
+         {console.log(image)}
             <div className="thumbnails " style={{}}>
                 <div className="thumbnail" onClick={() => handleThumbnailClick(image)}>
                     <img src={image} alt="Thumbnail 1" />

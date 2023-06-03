@@ -16,10 +16,10 @@ body {
     
   }
   
-  form{
+  /* form{
     margin-left: 20px;
   }
-  
+   */
   .login-container h2 {
     font-size: 24px;
     font-weight: 700;
@@ -63,7 +63,8 @@ body {
     border: none;
     width: 40%;
     display: block;
-    margin: 0px 80px ;
+    /* margin: 0px 80px ; */
+    margin: auto;
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
@@ -95,6 +96,7 @@ body {
     color: #777;
   }
   
+ 
   .footer a {
     color: #777;
     text-decoration: underline;
@@ -126,6 +128,7 @@ body {
   .abid-heading {
     font-size: 24px;
     font-weight: 700;
+    margin-left: 20px; 
     margin-bottom: 20px;
   }
   
@@ -224,13 +227,7 @@ body {
     font-weight: 700;
     margin-bottom: 20px;
   }
-  .form-group input[type="submit"] {
-   
-    margin: 0px 50px ;
-    padding-right: 75px;
-  
-    
-  }
+ 
   }
 
   /* Styles for medium screens */
