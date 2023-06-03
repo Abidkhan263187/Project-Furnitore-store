@@ -1,6 +1,7 @@
 
 
 import React, { useState } from 'react';
+import UserInfo from './UserInfo';
 
 
 const Cart = () => {
@@ -30,6 +31,7 @@ const Cart = () => {
         'https://images.unsplash.com/photo-1589584649628-b597067e07a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80',
     },
   ]);
+  const [checkoutClicked, setCheckoutClicked] = useState(false);
 
   const increaseQuantity = (itemId) => {
     setCartItems((prevItems) =>
@@ -56,6 +58,14 @@ const Cart = () => {
   const getTotalPrice = () => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   };
+
+  const handleCheckoutClick = () => {
+    setCheckoutClicked(true);
+  };
+
+  if (checkoutClicked) {
+    return <UserInfo />;
+  }
 
   return (
     <div style={{ padding: '30px' }}>
@@ -110,6 +120,7 @@ const Cart = () => {
           <div style={{ fontWeight: 'bold', fontSize: '20px' }}>Total: ${getTotalPrice()}</div>
         </div>
         <button
+        onClick={handleCheckoutClick}
           style={{
             width: '100%',
             marginTop: '20px',
@@ -131,3 +142,9 @@ const Cart = () => {
 };
 
 export default Cart;
+
+
+
+
+
+
