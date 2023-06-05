@@ -116,7 +116,7 @@ border-radius: 10px;
   
 }
 
-/* Styles for medium screens */
+
 @media (min-width: 768px) and (max-width: 1023px) {
   /* CSS properties for medium screens */
 }
