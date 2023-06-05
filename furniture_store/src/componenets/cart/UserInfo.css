@@ -75,7 +75,7 @@ border-radius: 10px;
 }
 
 @media (max-width: 767px) {
-  /* CSS properties for small screens */
+ 
   #total-on-user{
     font-size: small;
     font-weight: 700;
