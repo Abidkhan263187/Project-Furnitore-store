@@ -143,8 +143,106 @@
 
 
 
+// import React, { useState } from 'react';
+// import "./UserInfo.css"
+// import PaymentPage from './PaymentPage';
+// import { Navbar } from '../Home/Navbar';
+// import Footer from '../Home/Footer';
+
+// const UserInfo = () => {
+//   const [userInfo, setUserInfo] = useState({
+//     name: '',
+//     email: '',
+//     address: '',
+//     phone: '',
+//   });
+
+//   const [showPaymentPage, setShowPaymentPage] = useState(false);
+
+//   const handleInputChange = (event) => {
+//     const { name, value } = event.target;
+//     setUserInfo((prevState) => ({
+//       ...prevState,
+//       [name]: value,
+//     }));
+//   };
+
+//   const handleNextClick = () => {
+//     setShowPaymentPage(true);
+//   };
+
+//   return (
+//     <>
+//     <Navbar />
+//     <div className="container">
+      
+      
+//       {showPaymentPage ? (
+//         <PaymentPage userInfo={userInfo} />
+//       ) : (
+//         <form className='form-boxsd'>
+//           <h2 className="heading">User Information</h2>
+//           <div className="form-group">
+//             <label htmlFor="name">Name:</label>
+//             <input
+//               type="text"
+//               id="name"
+//               name="name"
+//               value={userInfo.name}
+//               onChange={handleInputChange}
+//               required
+//             />
+//           </div>
+//           <div className="form-group">
+//             <label htmlFor="email">Email:</label>
+//             <input
+//               type="email"
+//               id="email"
+//               name="email"
+//               value={userInfo.email}
+//               onChange={handleInputChange}
+//               required
+//             />
+//           </div>
+//           <div className="form-group">
+//             <label htmlFor="address">Address:</label>
+//             <input
+//               type="text"
+//               id="address"
+//               name="address"
+//               value={userInfo.address}
+//               onChange={handleInputChange}
+//               required
+//             />
+//           </div>
+//           <div className="form-group">
+//             <label htmlFor="phone">Phone:</label>
+//             <input
+//               type="text"
+//               id="phone"
+//               name="phone"
+//               value={userInfo.phone}
+//               onChange={handleInputChange}
+//               required
+//             />
+//           </div>
+//           <div className="form-group">
+//             <button className="btn-next" type="button" onClick={handleNextClick}>
+//               Next
+//             </button>
+//           </div>
+//         </form>
+//       )}
+//     </div>
+//     <Footer />
+//     </>
+//   );
+// };
+
+// export default UserInfo;
+
 import React, { useState } from 'react';
-import "./UserInfo.css"
+import './UserInfo.css';
 import PaymentPage from './PaymentPage';
 
 const UserInfo = () => {
@@ -155,8 +253,6 @@ const UserInfo = () => {
     phone: '',
   });
 
-  const [showPaymentPage, setShowPaymentPage] = useState(false);
-
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setUserInfo((prevState) => ({
@@ -164,74 +260,73 @@ const UserInfo = () => {
       [name]: value,
     }));
   };
-
-  const handleNextClick = () => {
-    setShowPaymentPage(true);
+  const [showPaymentPage, setShowPaymentPage] = useState(false);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Handle form submission logic here
+    
   };
+  const gotopay=()=>{
+    setShowPaymentPage(true);
+  }
 
   return (
-    <div className="container">
-      
+    <div className="user-info-containar">
       
       {showPaymentPage ? (
         <PaymentPage userInfo={userInfo} />
-      ) : (
-        <form>
-          <h2 className="heading">User Information</h2>
-          <div className="form-group">
-            <label htmlFor="name">Name:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={userInfo.name}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={userInfo.email}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="address">Address:</label>
-            <input
-              type="text"
-              id="address"
-              name="address"
-              value={userInfo.address}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="phone">Phone:</label>
-            <input
-              type="text"
-              id="phone"
-              name="phone"
-              value={userInfo.phone}
-              onChange={handleInputChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <button className="btn-next" type="button" onClick={handleNextClick}>
-              Next
-            </button>
-          </div>
-        </form>
-      )}
+      ) : (<form className="user-info-form" onSubmit={handleSubmit}>
+        <h2 className="user-info-heading">User Information</h2>
+        <div className="form-group">
+          <label htmlFor="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={userInfo.name}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={userInfo.email}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="address">Address:</label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            value={userInfo.address}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="phone">Phone:</label>
+          <input
+            type="text"
+            id="phone"
+            name="phone"
+            value={userInfo.phone}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <button className="submit-button" type="submit" onClick={gotopay} >Submit</button>
+        </div>
+      </form>)}
     </div>
   );
 };
 
 export default UserInfo;
-
