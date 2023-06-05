@@ -11,14 +11,9 @@ import Product from './products/product';
 function App() {
   return (
     <div className="App">
-       {/* <Navbar/>
-      <Allroutes/> */}
-      {/* <Product/> */}
+       
       <Cart/>
-   {/* <UserInfo/>
-   <PaymentPage/> */}
-   {/* <ItemDescription/> */}
-  
+   
     </div>
   );
 }
