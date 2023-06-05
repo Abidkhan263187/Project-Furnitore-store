@@ -1,0 +1,127 @@
+.abid-userInfo-container {
+  height: 600px;
+  display: flex;
+  
+  justify-content: space-between;
+  flex-direction: column;
+  
+}
+
+.userInfo-head-abid {
+  text-align: start;
+  margin-left: 10%;
+  margin-top: 30px;
+}
+
+.userInfo-inner-abid {
+border-radius: 10px;
+  margin: 10px auto 0px auto;
+  background-color: white;
+  display: flex;
+  padding: 20px 40px;
+  justify-content: space-between;
+  width: 80%;
+  height: 350px;
+}
+
+.abid-user-form {
+  height: 80%;
+  margin: 40px 0px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.promo-div-abid {
+  display: flex;
+  justify-content: space-between;
+  height: 80%;
+  margin: 40px 0px;
+  width: 45%;
+  flex-direction: column;
+}
+
+.promoo2 {
+  height: max-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.userInfo-total-box-abid {
+  height: max-content;
+  border: 1px solid gray;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 30px;
+  border-radius: 10px;
+}
+.user-next-btn{
+  width:12%;
+   margin: 0px 0px 100px 78%;
+}
+#userInfo-btn{
+  background-color: #ff9b0e;
+  color: white;
+  border-radius: 10px 0px 10px 0px;
+}
+#total-on-user{
+  font-size: large;
+  font-weight: 700;
+}
+.line{
+  color: gray;
+  
+}
+
+@media (max-width: 767px) {
+  /* CSS properties for small screens */
+  #total-on-user{
+    font-size: small;
+    font-weight: 700;
+  }
+  .userInfo-total-box-abid {
+  
+    padding: 8px 10px;
+    border-radius: 10px;
+  }
+  .promoo2 {
+    height: max-content;
+  
+   display: flex;
+   flex-direction: column;
+    height: 100px;
+  }
+  #userInfo-btn{
+    background-color: #ff9b0e;
+    color: white;
+    font-size: small;
+    width: 70px;
+    height: 30px;
+    border-radius: 10px 0px 10px 0px;
+  }
+  .user-next-btn{
+    width:12%;
+     margin: 0px 0px 100px 72%;
+  }
+  .userInfo-inner-abid {
+      padding: 20px 10px;
+    
+    }
+    .userInfo-inner-abid {
+        width: 90%;
+     
+      }
+      
+  
+}
+
+/* Styles for medium screens */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* CSS properties for medium screens */
+}
+
+/* Styles for large screens */
+@media (min-width: 1024px) {
+  /* CSS properties for large screens */
+}

@@ -28,6 +28,8 @@
 
 .abid-cat-div img {
   width: 70%;
+
+  margin: auto;
   transform: scale(.84);
 }
 
@@ -51,6 +53,7 @@
 }
 
 .abid-cat-div2 img {
+  margin: auto;
   width: 70%;
   height: 140px;
   /* border: 1px solid; */
@@ -208,6 +211,7 @@ h1 {
 .bestSelerCard img {
   width: 75%;
   height: 270px;
+  margin: auto;
   transform: scale(.98);
 }
 
@@ -227,8 +231,6 @@ h1 {
   display: grid;
   justify-content: space-between;
   grid-template-columns: repeat(8, 1fr);
-
-
   gap: 20px;
   margin: 10px 10px 30px 10px;
 
@@ -422,8 +424,8 @@ a {
 
   .abid-slide-images {
     width: 100%;
-    height: 100px;
-    object-fit: cover;
+    height: 170px;
+    
   }
 
   .abid-shopby-room img {
@@ -441,6 +443,7 @@ a {
   .bestSelerCard img {
     width: 75%;
     height: 200px;
+    
     transform: scale(.98);
   }
 
@@ -452,15 +455,15 @@ a {
   }
 
   .slide img {
-    width: 130%;
-    height: 100px;
+    width: 80px;
+    height: 70px;
     transform: scale(.98);
   }
 
   .slide>div {
     /* border: 1px solid; */
     height: 200px;
-    width: 130%;
+    width: 100px;
 
   }
 

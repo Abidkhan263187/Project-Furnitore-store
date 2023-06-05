@@ -1,0 +1,106 @@
+/* Navbar styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar {
+    background-color:#f2f2f2;
+    overflow: hidden;
+    margin-top: 5px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  }
+  
+  .logo {
+    color: white;
+    float: left;
+    padding: 14px 16px;
+    font-size: 20px;
+  }
+  
+  .nav-links {
+    list-style-type: none;
+    overflow: hidden;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 20px;
+    padding: 0px 20px;
+    margin: 10px 0px;
+  }
+  
+  .nav-links li {
+    float: left;
+  }
+  
+  .nav-links li a {
+    display: block;
+    color: rgb(20, 20, 20);
+    font-weight: 600;
+    text-align: left;
+     padding: 5px;
+    text-decoration: none;
+  }
+  
+  .nav-links li:hover {
+    background-color: #e2e0e0;
+  
+    
+  }
+  
+  .dropdown-menu1 {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  .dropdown-menu1{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding:  0px 20px 15px 20px;
+    gap: 5px;
+    background-color: #ededed;
+  }
+  .dropdown-menu1 a:hover{
+    background-color: #e2e0e0;
+  }
+  
+  /* .dropdown-menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  } */
+  /* .dropdown-menu a:hover{
+    background-color: #e2e0e0;
+  } */
+  
+  /* .nav-links li:hover .dropdown-menu {
+    display: block;
+  } */
+  
+  @media (max-width: 767px) {
+    /* CSS properties for small screens */
+    .nav-links{
+        display: none;
+    }
+  }
+
+  /* Styles for medium screens */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    /* CSS properties for medium screens */
+  .nav-links{
+    grid-template-columns: repeat(5, 1fr);
+    }
+    #clock{
+        display: none;
+    }
+  }
+
+  /* Styles for large screens */
+  @media (min-width: 1024px) {
+    /* CSS properties for large screens */
+  }

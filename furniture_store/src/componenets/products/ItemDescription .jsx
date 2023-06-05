@@ -6,14 +6,34 @@ import 'react-multi-carousel/lib/styles.css';
 import { Link } from 'react-router-dom';
 import { SlideCard } from '../Home/SlideCard';
 import Slider from '../Home/Slider';
-import { useDispatch,useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { addtoCart, getProduct } from '../../Redux/api';
 import { useParams } from 'react-router-dom';
+import { Box, Text, border } from '@chakra-ui/react';
 
 const ItemDescription = () => {
-    const { id } = useParams()
+    const { id,product } = useParams()
+
+    const { single} = useSelector((store) => {
+        return store
+    })
+
+    const [selectedImage, setSelectedImage] = useState(null);
     const dispatch = useDispatch()
     
+
+    useEffect(() => {
+        dispatch(getProduct(id, product))
+    }, [])
+console.log(product);
+    const[obj,setObj]=useState({})
+
+    useEffect(() => {
+        setObj(single)
+        setSelectedImage(single.image);
+    }, [single]);
+
+
     const responsive = {
         superLargeDesktop: {
             // the naming can be any, depends on you.
@@ -34,86 +54,97 @@ const ItemDescription = () => {
         }
     };
     // need to call api based on api 
-    useEffect(() => {
-        dispatch(getProduct(id))
-    }, [])
 
 
     const handleThumbnailClick = (image) => {
         setSelectedImage(image);
     };
+    useEffect(() => {
+        window.scrollTo(0, 0); // Scroll to the top of the page on component mount
+      }, []);
+    const handleCart = () => {
 
-    const handleCart=()=>{
-        alert("Item added in cart")
-        dispatch(addtoCart(single))
+        const prod={
+            name:single.name,
+            price:single.price,
+            image:single.image,
+            mrp:single.mrp,
+            quantity:single.quantity,
+            discount:single.discount,
+            rating:single.rating,
+            
+        }
 
+
+        dispatch(addtoCart(prod))
+        alert("Item added into Cart")
     }
-    const {single}=useSelector((store)=>{
-        return store
-    })
-    const {image,name,price,rating,discount,mrp}=useSelector((store)=>{
-        return store.single
-    })
-    const [selectedImage, setSelectedImage] = useState(image);
-     console.log(image)
     return (
-        <><div className="desc-container" >
+        <>
+            <div className="desc-container" style={{ width: '90%' }} >
+            
+                <div className="thumbnails " style={{}}>
+                    <div className="thumbnail" onClick={() => handleThumbnailClick(single.image2)}>
+                        <img src={single.image2} alt="Thumbnail 1" />
+                    </div>
+                    <div className="thumbnail" onClick={() => handleThumbnailClick(single.image3)}>
+                        <img src={single.image3} alt="Thumbnail 2" />
+                    </div>
+                    <div className="thumbnail" onClick={() => handleThumbnailClick(single.image4)}>
+                        <img src={single.image4} alt="Thumbnail 3" />
+                    </div>
+                    <div className="thumbnail" onClick={() => handleThumbnailClick(single.image5)}>
+                        <img src={single.image5} alt="Thumbnail 4" />
+                    </div>
+                </div>
+                {/* 2nd  */}
+                <div className="desc-image">
+                    <img src={selectedImage} style={{ margin: " 15% auto", width: "100%" }} alt="Furniture" />
+                </div>
 
-         {console.log(image)}
-            <div className="thumbnails " style={{}}>
-                <div className="thumbnail" onClick={() => handleThumbnailClick(image)}>
-                    <img src={image} alt="Thumbnail 1" />
+                <div className="details-details" >
+                    <h2 className="details-name" style={{}}>{single.name}</h2>
+                    <Text fontWeight={"600"} color={"green"} fontSize={["xs", "sm", "lg", "lg"]}>Special Price</Text>
+                    <p className="details-price">${single.price}</p>
+                    <s className="details-mrpprice">${single.mrp}</s>
+
+                 
+                    <div className='details-discount'>
+                         <span className='details-disc'>{single.discount}%   Off</span>
+                         <Text className='abid-rating-div'>{single.rating}<i style={{paddingLeft:"3px"}} class="fa-solid fa-star"></i></Text>
+                          <Box className='abid-discount-div'><i class="fa-solid fa-otter"></i>   best Seller</Box>
+                    </div>
+                  
+                    <div className='details-dimension'>
+                     <Text fontSize={"lg"} fontWeight={"600"}>Bank Offers</Text>
+                     
+                     <Text fontSize={"sm"} mt={"5px"}> <i style={{color:"green"}} class="fa-solid fa-tag" ></i>  Special PriceGet extra 28% off (price inclusive of cashback/coupon) <span style={{color:" #cc5500"}}>T&C</span> </Text>
+
+                     <Text fontSize={"sm"} mt={"5px"}> <i style={{color:"green"}} class="fa-solid fa-tag"></i> Sign up for Flipkart Pay Later get Flipkart Gift Card worth  ₹1,000* <span style={{color:" #cc5500"}}>Know More</span> </Text>
+
+                     <Text fontSize={"sm"} mt={"5px"}> <i style={{color:"green"}} class="fa-solid fa-tag"></i> Partner OfferBuy this product and get upto ₹250 Off <span style={{color:" #cc5500"}}> Know More</span></Text>
+
+                     <Text fontSize={"sm"} mt={"5px"}> <i style={{color:"green"}} class="fa-solid fa-tag"></i> Bank OfferFlat ₹1,250 Off on HDFC Bank Credit Card ₹15,000 to ₹39,999 <span style={{color:" #cc5500"}}>T&C</span> </Text>
+                    </div>
+
+                    <p className="details-description">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti, atque.
+                    </p>
+                    <div className='details-buy-btn-div'>
+                        <Link ><button className="details-buy-now" onClick={handleCart}>Add to Cart</button>
+                        </Link>
+
+                        <Link>
+                            <button className="details-add-now"><i class="fa-solid fa-heart fa-2xl"></i></button>
+                        </Link>
+                    </div>
+
+
                 </div>
-                <div className="thumbnail" onClick={() => handleThumbnailClick(image)}>
-                    <img src={image} alt="Thumbnail 2" />
-                </div>
-                <div className="thumbnail" onClick={() => handleThumbnailClick("https://cdn.shopify.com/s/files/1/2660/5236/products/shopify-image_a6fa3eb1-c388-4ce9-a914-c9ea3e4384cf_medium.jpg?v=1681837487")}>
-                    <img src="https://cdn.shopify.com/s/files/1/2660/5236/products/shopify-image_a6fa3eb1-c388-4ce9-a914-c9ea3e4384cf_medium.jpg?v=1681837487" alt="Thumbnail 3" />
-                </div>
-                <div className="thumbnail" onClick={() => handleThumbnailClick(image)}>
-                    <img src={image} alt="Thumbnail 4" />
-                </div>
+
             </div>
 
-
-            {/* 2nd  */}
-            <div className="desc-image">
-                <img src={selectedImage} style={{ margin: " 15% auto" }} alt="Furniture" />
-            </div>
-            <div className="details-details" style={{}}>
-                <h2 className="details-name" style={{}}>{name}</h2>
-                <p className="details-price">${price}</p>
-                <s className="details-mrpprice">${mrp}</s>
-
-                <div className='details-dimension'>
-                    <h4>Dimensions </h4>
-                    <p>Height - <span style={{color:"orange"}}>2 feet</span></p>
-                    <p>Width - <span style={{color:"orange"}}>4 feet</span></p>
-                </div>
-
-                <div className='details-discount'>
-                    Discount: <span className='details-disc'>{discount}%</span>
-                </div>
-                <div className="details-rating" style={{}}>
-                    <span className="details-rating-label"></span>
-                    <span className="details-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
-                </div>
-                <p className="details-description">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti, atque.
-                </p>
-                <div className='details-buy-btn-div'>
-                    <Link ><button className="details-buy-now" onClick={handleCart}>Add to Cart</button>
-                    </Link>
-
-                    <Link>
-                        <button className="details-add-now"><i class="fa-solid fa-heart fa-2xl"></i></button>
-                    </Link>
-                </div>
-
-
-            </div>
-        </div>
-
+            <hr />
             <div className='review-container'>
                 <div className='txt-review'><h2>Reviews</h2></div>
                 <Carousel responsive={responsive}>

@@ -10,6 +10,12 @@
     justify-content: space-between;
     align-items: center;
     width: 50%;
+  
+}
+.abid-nav1 h3{
+    color: #323232;
+    font-size: larger;
+    font-weight: 600;
 }
 
 .abid-nav2 {
@@ -43,11 +49,24 @@
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
-    background-color: #d4d4d4;
+    background-color:#d4d4d4;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    color: #323232;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .abid-nav-container.sticky {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
 
-}
-
+  .nav-logo{
+    font-size: 20px;
+  }
 .abid-nav-container a {
     text-decoration: none;
     color: #323232;
@@ -56,6 +75,7 @@
 
 .abid-nav-container a:hover {
     text-decoration: underline;
+    
     transform: scale(1);
 }
 
@@ -64,23 +84,30 @@
     .abid-search-div{
         display: flex;
         /* border: 1px solid; */
-        width: 60%;
-       
-        
+        width: 80px;
+        height: 20px;
+        font-size: xx-small;
+        padding-left:5px;
     }
     .abid-serach-nav{
         width: 100%;
+       
     }
     .abid-nav2 { 
         width: 100%;  
         /* border: 1px solid; */
+       
     }
     .abid-nav3{
         display: none;
     }
-    .abid-a{
+   .shuffle{
         display: none;
     }
+    .abid-a1{
+        display:none
+    }
+ 
   }
 
   /* Styles for medium screens */
@@ -104,6 +131,7 @@
     .abid-nav3{
         display: none;
     }
+    
   }
 
   /* Styles for large screens */

@@ -1,0 +1,127 @@
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+.abid-product-products-div{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    padding: 0px 20px;
+    width: 100%;
+    
+}
+.head-filter-cat{
+  background-color: #d4d4d4;
+}
+.abid-prodnav-div{
+  /* border:1px solid; */
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top: 20px;
+  padding:0px 60px;
+}
+.abid-product-filter-div{
+ width: 20%;
+ margin: 0px 10px
+      }
+.abid-sorting-div{
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid; */
+  width: 25%;
+  margin-left: -130px;
+}
+.abid-sorting-div button{
+background-color:#f2f2f2 ;
+}
+.items-abid{
+  color: gray;
+  font-size: small;
+  margin-top: 20px;
+}
+.abid-view{
+  color: gray;
+  font-size: small;
+  margin-top: 20px;
+}
+.page-name-abid{
+  /* border: 1px solid; */
+  margin-bottom: 10px;
+  width: 100px;
+}
+
+.checkbox-text-abid{
+  font-size: 1px;
+  background-color: gray;
+}
+
+@media (max-width: 767px) {
+    /* CSS properties for small screens */
+    .abid-product-products-div{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 20px;
+        padding: 20px;
+        width: 70%;
+    }
+    .abid-product-filter-div{
+      width: 35%;
+    }
+  
+  .items-abid{
+   display: none;
+  }
+  .abid-view{
+    display: none;
+  }
+  .abid-sorting-div{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid; */
+    width: 55%;
+  margin-left: 80px;
+  
+  }
+  #dummy-pic{
+    display: none;
+  }
+  .checkbox-text-abid{
+    font-size: 10px;
+  }
+ 
+  }
+
+  /* Styles for medium screens */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    /* CSS properties for medium screens */
+    .abid-product-products-div{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 20px;
+        padding: 20px;
+        width: 80%;
+    }
+    .abid-sorting-div{
+      display: flex;
+      justify-content: space-between;
+      /* border: 1px solid; */
+      width: 35%;
+    margin-left: 40px;
+    
+    }
+    .items-abid{
+     font-size: xx-small;
+     }
+     .abid-view{
+      font-size: xx-small;
+     }
+  }
+  
+
+  /* Styles for large screens */
+  @media (min-width: 1024px) {
+    /* CSS properties for large screens */
+  }

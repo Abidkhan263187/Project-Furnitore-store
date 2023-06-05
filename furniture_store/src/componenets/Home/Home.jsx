@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Slideshow from './SlideShow'
 import Carousel from 'react-multi-carousel';
@@ -52,10 +52,13 @@ export const Home = () => {
     }
   };
 
-
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top of the page on component mount
+  }, []);
   return (
     <>
     <SecondNav />
+    <hr />
     <div className='home'>
       <div>
         <Slideshow />

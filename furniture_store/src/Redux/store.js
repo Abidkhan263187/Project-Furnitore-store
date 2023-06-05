@@ -3,9 +3,9 @@ import thunk from "redux-thunk"
 import { reducer } from "./reducer";
 
 
-
 export const store = createStore(reducer,applyMiddleware(thunk));
 
-store.subscribe(()=>{
-    console.log(store.getState().single.image)
-})
+
+// store.subscribe(()=>{
+//     console.log(store.getState().paymentInfo);
+// })

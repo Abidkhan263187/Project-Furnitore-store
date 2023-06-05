@@ -1,9 +1,15 @@
-import { AUTH, CARTARRAY, PERMIT, SINGLE } from "./actiontypes";
+import { ADDPARAMS, AUTH, CARTARRAY, CART_TOTAL, PAYMENT_INFO, PERMIT, SINGLE, UPLOAD_PROD_DATA, USER_INFO } from "./actiontypes";
 const inituserArr={
     userArr:[],
     access:false,
     single:{},
-    cart:[]
+    cart:[],
+    display:false,
+    prod_Array:[],
+    userInfo:{},
+    paymentInfo:{},
+    carttotal:''
+
 }
 
 export const reducer=(state=inituserArr,action)=>{
@@ -18,9 +24,22 @@ export const reducer=(state=inituserArr,action)=>{
         case SINGLE:{
             return{...state,single:action.payload}
         }
-        // case CARTARRAY:{
-        //     return{...state,cart:action.payload}
-        // }
+        case CARTARRAY:{
+            return{...state,cart:action.payload}
+        }
+        case UPLOAD_PROD_DATA:{
+            return{...state,prod_Array:action.payload}
+        }
+        case USER_INFO:{
+            return{...state,userInfo:action.payload}
+        }
+        case PAYMENT_INFO:{
+            return{...state,paymentInfo:action.payload}
+        }
+        case CART_TOTAL:{
+            return{...state,carttotal:action.payload}
+        }
+        default: return state;
     }
-    return state;
+    
 }

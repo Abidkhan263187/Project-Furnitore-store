@@ -16,7 +16,7 @@ function SignupPage() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        
         if (sign.email === '' || sign.name === '' || sign.password === '') {
             alert("fill all the field")
             setSign({ ...sign, email: '', password: "" })

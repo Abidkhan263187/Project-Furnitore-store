@@ -1,0 +1,119 @@
+*{
+
+margin: 0%;
+padding: 0%;
+box-sizing: border-box;
+}
+
+.abid-Product-Card {
+
+    background-color: white;
+}
+
+.abid-card-img-div {
+    height: 250px;
+    width: 100%;
+    margin: auto;
+
+}
+
+.abid-card-img-div img {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+
+
+}
+/* .card-buy-btn */
+.product-abid-btn-div {
+    /* border: 1px solid; */
+    margin-top: -20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-abid-btn-div {
+    margin-bottom: 0px;
+}
+
+.abid-delivery-box {
+    /* border: 1px solid; */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+
+    /* CSS properties for small screens */
+    .product-abid-btn-div {
+        /* border: 1px solid; */
+        width: 100%;
+
+    }
+
+    .abid-delivery-box {
+        /* border: 1px solid; */
+        width: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        font-size: xx-small;
+    }
+
+    .abid-card-img-div img {
+        height: 70%;
+    }
+
+    .abid-card-img-div {
+        height: 170px;
+        width: 100%;
+        margin: 0px auto -50px auto;
+
+    }
+    #card-buy-btn{
+        font-size: xx-small;
+       background-color: #ff9015;
+    }
+    #rat-abid{
+        font-size: xx-small;
+       
+    }
+}
+
+/* Styles for medium screens */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    /* CSS properties for medium screens */
+    .abid-card-img-div img {
+        height: 70%;
+    }
+
+    .abid-card-img-div {
+        height: 170px;
+        width: 100%;
+        margin: 0px auto -50px auto;
+
+    }
+
+    .abid-delivery-box div {
+        font-size: x-small;
+    }
+    #card-buy-btn{
+        font-size: xx-small;
+       background-color: #ff9015;
+    }
+    #rat-abid{
+        font-size: x-small;
+    }
+}
+
+/* Styles for large screens */
+@media (min-width: 1024px) {
+    /* CSS properties for large screens */
+    #card-buy-btn{
+        font-size: medium;
+       background-color: #ff9015;
+    }
+}
