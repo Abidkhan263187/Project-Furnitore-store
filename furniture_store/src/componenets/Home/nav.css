@@ -83,7 +83,7 @@
     /* CSS properties for small screens */
     .abid-search-div{
         display: flex;
-        /* border: 1px solid; */
+       
         width: 80px;
         height: 20px;
         font-size: xx-small;
@@ -95,7 +95,7 @@
     }
     .abid-nav2 { 
         width: 100%;  
-        /* border: 1px solid; */
+       
        
     }
     .abid-nav3{
