@@ -1,9 +1,5 @@
 
-
-import axios from 'axios'
-import {AUTH,CARTARRAY,PERMIT, SINGLE, INCREMENT_QUANTITY,
-    DECREMENT_QUANTITY,
-    REMOVE_FROM_CART} from './actiontypes'
+import {ADDPARAMS, AUTH,CARTARRAY,CART_TOTAL,PAYMENT_INFO,PERMIT, SINGLE, UPLOAD_PROD_DATA, USER_INFO} from './actiontypes'
 
 
  export const Authenticate=(payload)=>{
@@ -33,24 +29,32 @@ return {
 }
 }
 
-// logic for Cart page action -------------------------------------
-export const incrementQuantity = (itemId) => {
-    return {
-      type: INCREMENT_QUANTITY,
-      payload: itemId,
-    };
-  };
-  
-  export const decrementQuantity = (itemId) => {
-    return {
-      type: DECREMENT_QUANTITY,
-      payload: itemId,
-    };
-  };
-  
-  export const removeFromCart = (itemId) => {
-    return {
-      type: REMOVE_FROM_CART,
-      payload: itemId,
-    };
-  };
+
+export const uploadProductsData=(payload)=>{
+    return{
+        type:UPLOAD_PROD_DATA,
+        payload,
+    }
+}
+export const userInfor=(payload)=>{
+    return{
+        type:USER_INFO,
+        payload,
+    }
+}
+export const cartTotal=(payload)=>{
+    return{
+        type:CART_TOTAL,
+            payload,
+        
+    }
+}
+export const storePaymentInfo=(payload)=>{
+    return{
+        type:PAYMENT_INFO,
+        payload,
+    }
+}
+
+
+

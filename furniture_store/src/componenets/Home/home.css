@@ -1,0 +1,670 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+.abid-slide-images {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.sbc {
+  margin-top: 20px;
+}
+
+.home {
+  padding: 10px 10px;
+}
+
+.abid-cat-div {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin-top: 20px;
+  padding: 20px 80px 20px 60px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.abid-cat-div img {
+  width: 70%;
+
+  margin: auto;
+  transform: scale(.84);
+}
+
+.abid-cat-div img:hover {
+  width: 70%;
+  transform: scale(1);
+}
+
+.abid-cat-div>a {
+  text-decoration: none;
+  color: #323232;
+}
+
+.abid-cat-div2 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 20px 100px 20px 60px;
+  margin: 1% 0% 1% 0%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  /* border: 1px solid; */
+}
+
+.abid-cat-div2 img {
+  margin: auto;
+  width: 70%;
+  height: 140px;
+  /* border: 1px solid; */
+  transform: scale(.84);
+}
+
+.abid-cat-div2 img:hover {
+  width: 70%;
+  transform: scale(1);
+}
+
+.abid-cat-div2>a {
+  text-decoration: none;
+  color: #323232;
+}
+
+.abid-shopby-room {
+
+  width: 80%;
+  margin: auto;
+}
+
+.abid-images-room h3 {
+  text-align: left;
+  margin: 0px 0px 10px 23px;
+
+}
+
+.abid-shopby-room img {
+  height: 350px;
+  width: 85%;
+  margin: 30px 0px;
+  object-fit: cover;
+  transform: scale(.99);
+
+}
+
+.abid-shopby-room img:hover {
+  transform: scale(1);
+}
+
+.abid-room-Container {
+  /* border: 1px solid red; */
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 30px 40px;
+  margin-top: 10px;
+
+}
+
+
+.abid-know-more {
+  /* border: 1px solid; */
+  display: flex;
+  justify-content: space-between;
+  width: 22%;
+  margin: 10px 0px 5px 20px;
+  color: #ff9a0f;
+  font-weight: 600;
+}
+
+.abid-know-more img {
+  width: 10%;
+  height: 100px;
+}
+
+.abid-images-room>p {
+  /* border: 1px solid; */
+  text-align: left;
+  padding: 0px 20px;
+  color: gray;
+}
+
+.abid-slide-div {
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+  margin-top: 10px;
+  padding: 30px 40px;
+}
+
+.slider-abid {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 370px;
+  /* border: 1px solid; */
+  margin: 2% auto;
+  padding: 10px 30px;
+  gap: 40px;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 600;
+  color: #323232;
+}
+
+.slide {
+  flex: 0 0 25%;
+  /* Adjust the slide width as needed */
+  height: 100%;
+  width: 50%;
+  /* box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px; */
+  background-color: #f2f2f2;
+  /* border: 1px solid #ddd; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.slide img {
+  width: 100%;
+  height: 200px;
+  transform: scale(.98);
+}
+
+.slide img:hover {
+  transform: scale(1);
+}
+
+.abid-slideshow-detail {
+  text-align: left;
+
+}
+
+.abid-slideshow-detail p {
+  font-size: smaller;
+  font-weight: 600;
+
+}
+
+.slide-price-abid {
+  color: green;
+}
+
+.abid-slideshow-detail a {
+  text-decoration: none;
+  color: #ff9a0f;
+}
+
+.Best-sellers-div {
+  margin: auto;
+  width: 90%;
+}
+
+.abid-best-sellers {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 30px 40px;
+  margin-top: 10px;
+}
+
+.bestSelerCard {
+  padding: 30px 10px;
+}
+
+.bestSelerCard img {
+  width: 75%;
+  height: 270px;
+  margin: auto;
+  transform: scale(.98);
+}
+
+.bestSelerCard img:hover {
+  transform: scale(1);
+}
+
+.best-seller-p {
+  font-weight: 700;
+  /* border: 1px solid; */
+  padding: 5px 10px 5px 45px;
+  text-align: left;
+}
+
+/* second nav  */
+.abid-second-nav {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 20px;
+  margin: 10px 10px 30px 10px;
+
+}
+
+.abid-second-nav a {
+  text-decoration: none;
+  color: #282c34;
+  font-weight: 700;
+  transform: scale(.97);
+}
+
+.abid-second-nav a:hover {
+  text-decoration: underline;
+  transform: scale(1);
+}
+
+/* second nav end  */
+
+
+/* footer part  */
+.abid-footer-container {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin: 20px 0px 5px 0px;
+  /* border: 1px solid; */
+  height: 400px;
+  display: flex;
+
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* padding: 10px 0px; */
+}
+
+.footer-one-abid {
+  /* border: 1px solid; */
+  display: flex;
+  align-items: center;
+  padding: 10px 40px;
+}
+
+.footer-one-abid img {
+  width: 30%;
+  margin: 2% auto;
+}
+
+.footer-one-abid>div {
+  width: 30%;
+  margin: auto;
+  height: 100px;
+  padding: 20px 0px;
+}
+
+#abid-clock+div {
+  text-align: left;
+  color: rgb(92, 92, 92);
+  font-weight: 600;
+  padding-left: 20px;
+}
+
+#fst-abid-clock {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-radius: 10px;
+  /* background-color: gray; */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+#fst-abid-clock p {
+  font-size: smaller;
+}
+
+.second-color-part {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* padding: 10px 0px; */
+
+  padding-top: 30px;
+  color: #bcbcbc;
+  background-color: #404040;
+}
+
+.footer-two-abid {
+  padding: 0px 10px;
+  display: flex;
+
+  justify-content: space-between;
+  color: #bcbcbc;
+
+}
+
+.footer-two-abid a {
+  text-decoration: none;
+}
+
+.abid-contact-footer {
+  display: flex;
+  justify-content: space-between;
+  color: #bcbcbc;
+  font-weight: 600;
+  width: 25%;
+  /* border: 1px solid; */
+}
+
+.abid-footer-opt {
+  display: flex;
+  /* border: 1px solid; */
+  width: 48%;
+  justify-content: space-between;
+
+}
+
+.abid-footer-opt,
+a {
+  color: #bcbcbc;
+  font-weight: 600;
+}
+
+.footer-three-abid {
+  /* border: 2px solid; */
+  padding: 25px 10px;
+  display: flex;
+  background-color: #323232;
+  justify-content: space-between;
+}
+
+.abid-social-modes {
+  width: 10%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.abid-social-modes a {
+  color: #bcbcbc;
+  font-weight: 600;
+
+}
+
+.abid-payment-modes {
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid; */
+}
+
+.abid-payment-modes a {
+  color: #bcbcbc;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* footer part end  */
+
+
+/* media queries  */
+
+@media (max-width: 766px){
+  .mrp-abid-div {
+    font-weight: 700;
+    text-align: left;
+    margin-top: 70px;
+    /* background-color: #282c34; */
+
+  }
+  
+
+}
+@media (max-width: 767px) {
+  /* CSS properties for small screens */
+
+  .abid-cat-div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: 20px 0px;
+  padding: 20px 10px;
+  }
+
+  .abid-cat-div2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 20px 0px;
+    padding: 20px 10px;
+  }
+
+  .abid-second-nav {
+    display: none;
+  }
+
+  .abid-slide-images {
+    width: 100%;
+    height: 170px;
+    
+  }
+
+  .abid-shopby-room img {
+    height: 200px;
+    width: 85%;
+    margin: 30px 0px;
+    object-fit: cover;
+    transform: scale(.99);
+  }
+
+  .abid-know-more {
+    width: 50%;
+  }
+
+  .bestSelerCard img {
+    width: 75%;
+    height: 200px;
+    
+    transform: scale(.98);
+  }
+
+  .mrp-abid-div {
+    font-weight: 700;
+    text-align: left;
+    margin-top: 70px;
+
+  }
+
+  .slide img {
+    width: 80px;
+    height: 70px;
+    transform: scale(.98);
+  }
+
+  .slide>div {
+    /* border: 1px solid; */
+    height: 200px;
+    width: 100px;
+
+  }
+
+  .slide p {
+    font-size: xx-small;
+  }
+
+  .footer-one-abid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 20px;
+    /* background-color: #282c34; */
+
+  }
+
+  .abid-footer-container {
+    height: 500px;
+  }
+
+  .footer-one-abid>div {
+    
+    width: 200px;
+    height: 70px;
+
+    margin: auto;
+    /* background-color: #282c34; */
+  }
+
+  #detail-inside p{
+    font-size: xx-small;
+  }
+
+  .second-color-part {
+    height: 350px;
+    width: 100%;
+
+  }
+h1{
+  font-size: x-large;
+}
+  .footer-two-abid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+  }
+
+  .abid-contact-footer {
+    width: 100%;
+    padding: 0px 10px;
+  }
+  .footer-two-abid p,a{
+    font-size: x-small;
+  }
+  .abid-footer-opt {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 10px;
+    width: 100%;
+  }
+
+  .footer-three-abid {
+    /* border: 2px solid; */
+    margin: 25px 0px;
+    display: grid;
+    gap: 20px 0px;
+    justify-content: center;
+  }
+  .abid-social-modes{
+    margin: auto;
+    
+  }
+  .abid-payment-modes{
+ 
+    width: 100%;
+    padding: 0px 20px;
+  }
+  .abid-social-modes{
+   
+    width: 30%;
+  }
+  .abid-slide-div {
+    height: 350px;
+  }
+}
+
+/* Styles for medium screens */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  /* CSS properties for medium screens */
+  .abid-cat-div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+  }
+
+  .abid-cat-div2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .abid-second-nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+
+  }
+
+  .abid-slide-images {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100px;
+    transform: scale(.98);
+  }
+
+  .abid-slideshow-detail {
+    text-align: left;
+    height: 100px;
+  }
+
+  .bestSelerCard img {
+    width: 75%;
+    height: 200px;
+    transform: scale(.98);
+  }
+
+  .abid-shopby-room img {
+    height: 250px;
+    width: 85%;
+    margin: 30px 0px;
+    object-fit: cover;
+    transform: scale(.99);
+
+  }
+
+  .abid-know-more {
+    /* border: 1px solid; */
+    width: 40%;
+
+  }
+
+  .footer-one-abid img {
+    width: 50%;
+    margin: 0px auto;
+  }
+
+  .abid-contact-footer {
+    /* border: 1px solid; */
+    font-size: x-small;
+  }
+
+  .abid-footer-opt {
+    width: 58%;
+    font-size: x-small;
+  }
+
+  .abid-payment-modes {
+    width: 35%;
+    font-size: small;
+  }
+
+  .second-color-part {
+    height: 160px;
+    width: 100%;
+
+    color: #bcbcbc;
+    background-color: #404040;
+  }
+
+  #fst-abid-clock p {
+    font-size: x-small;
+  }
+}
+
+/* Styles for large screens */
+@media (min-width: 1024px) {
+
+  /* CSS properties for large screens */
+  .abid-cat-div {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    margin-top: 20px;
+    padding: 20px 80px 20px 60px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+
+  .abid-cat-div2 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    margin-top: 20px;
+    padding: 20px 80px 20px 60px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+}
+
+
+/* media queries end  */

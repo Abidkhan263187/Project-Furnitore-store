@@ -1,0 +1,14 @@
+{
+  "furnitureCart": [
+    {
+      "id": 2,
+      "name": "Leather Reclining Sofa",
+      "price": 1299,
+      "image": "https://cdn.shopify.com/s/files/1/2660/5236/products/jsaz6yhgukas3qde1tqa_9f40a5c5-d968-44ad-894f-296b3760c8ae_medium.jpg?v=1675965284",
+      "mrp": 1499,
+      "discount": 13,
+      "quantity": 1,
+      "rating": 2
+    }
+  ]
+}

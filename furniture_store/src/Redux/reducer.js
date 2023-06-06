@@ -1,11 +1,18 @@
-import { AUTH, CARTARRAY, PERMIT, SINGLE,INCREMENT_QUANTITY,
-    DECREMENT_QUANTITY,
-    REMOVE_FROM_CART } from "./actiontypes";
+
+import { ADDPARAMS, AUTH, CARTARRAY, CART_TOTAL, PAYMENT_INFO, PERMIT, SINGLE, UPLOAD_PROD_DATA, USER_INFO } from "./actiontypes";
+
 const inituserArr={
     userArr:[],
     access:false,
     single:{},
+    cart:[],
+    display:false,
+    prod_Array:[],
+    userInfo:{},
+    paymentInfo:{},
+    carttotal:'',
     cart:[]
+
 }
 
 export const reducer=(state=inituserArr,action)=>{
@@ -24,36 +31,19 @@ export const reducer=(state=inituserArr,action)=>{
             return{...state,cart:action.payload}
         }
 
-
-
-        //reducer for cart page ------------------------
-
-        case INCREMENT_QUANTITY:
-      return state.map((item) => {
-        if (item.id === action.payload) {
-          return {
-            ...item,
-            quantity: item.quantity + 1,
-          };
+        case UPLOAD_PROD_DATA:{
+            return{...state,prod_Array:action.payload}
         }
-        return item;
-      });
-
-    case DECREMENT_QUANTITY:
-      return state.map((item) => {
-        if (item.id === action.payload) {
-          return {
-            ...item,
-            quantity: item.quantity > 1 ? item.quantity - 1 : 1,
-          };
+        case USER_INFO:{
+            return{...state,userInfo:action.payload}
         }
-        return item;
-      });
-
-    case REMOVE_FROM_CART:
-      return state.filter((item) => item.id !== action.payload);
-
-
+        case PAYMENT_INFO:{
+            return{...state,paymentInfo:action.payload}
+        }
+        case CART_TOTAL:{
+            return{...state,carttotal:action.payload}
+        }
+        default: return state;
     }
-    return state;
-}
+  }
+    

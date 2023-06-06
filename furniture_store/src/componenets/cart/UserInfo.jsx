@@ -1,332 +1,104 @@
 
-
-// import React, { useState } from 'react';
-// import "./UserInfo.css"
-// import PaymentPage from './PaymentPage';
-
-// const UserInfo = () => {
-//   const [userInfo, setUserInfo] = useState({
-//     name: '',
-//     email: '',
-//     address: '',
-//     phone: '',
-//   });
-
-//   const [promoCode, setPromoCode] = useState('');
-//   const [totalAmount, setTotalAmount] = useState(0);
-//   const [showPaymentPage, setShowPaymentPage] = useState(false);
-
-//   const handleInputChange = (event) => {
-//     const { name, value } = event.target;
-//     setUserInfo((prevState) => ({
-//       ...prevState,
-//       [name]: value,
-//     }));
-//   };
-
-//   const handlePromoCodeChange = (event) => {
-//     setPromoCode(event.target.value);
-//   };
-
-//   const handleNextClick = () => {
-//     // Perform next button action here
-    
-//     setShowPaymentPage(true);
-//   };
+import { Box, Button, FormControl, FormLabel, Heading, Input, Text, useToast } from '@chakra-ui/react'
+import React, { useEffect } from 'react'
+import './UserInfo.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { useState } from 'react'
+import { userInfor } from '../../Redux/action'
+import { Link } from 'react-router-dom'
+import { cartTotal } from '../../Redux/action'
+import { useNavigate } from 'react-router-dom'
 
 
-
-//   // Calculate total amount based on promo code
-//   const calculateTotalAmount = () => {
-//     // Logic to calculate total amount based on promo code
-//     // and update the state using setTotalAmount()
-//   };
-
-//   return (
-//     <div className="container">
-//       <h2 className="heading">User Information</h2>
-//       <hr className="divider" />
-//       {showPaymentPage ? (
-//         <PaymentPage userInfo={userInfo} totalAmount={totalAmount} />
-//       ) :(<form>
-//         <div className="form-group">
-//           <label htmlFor="name">Name:</label>
-//           <input
-//             type="text"
-//             id="name"
-//             name="name"
-//             value={userInfo.name}
-//             onChange={handleInputChange}
-//             required
-//           />
-//         </div>
-//         <div className="form-group">
-//           <label htmlFor="email">Email:</label>
-//           <input
-//             type="email"
-//             id="email"
-//             name="email"
-//             value={userInfo.email}
-//             onChange={handleInputChange}
-//             required
-//           />
-//         </div>
-//         <div className="form-group">
-//           <label htmlFor="address">Address:</label>
-//           <input
-//             type="text"
-//             id="address"
-//             name="address"
-//             value={userInfo.address}
-//             onChange={handleInputChange}
-//             required
-//           />
-//         </div>
-//         <div className="form-group">
-//           <label htmlFor="phone">Phone:</label>
-//           <input
-//             type="text"
-//             id="phone"
-//             name="phone"
-//             value={userInfo.phone}
-//             onChange={handleInputChange}
-//             required
-//           />
-//         </div>
-//         {/* <div className="form-group">
-//           <label htmlFor="promoCode">Promo Code:</label>
-//           <input
-//             type="text"
-//             id="promoCode"
-//             name="promoCode"
-//             value={promoCode}
-//             onChange={handlePromoCodeChange}
-//           />
-//         </div>
-//         <div className="form-group">
-//           <button
-//             className="btn-calculate"
-//             type="button"
-//             onClick={calculateTotalAmount}
-//           >
-//             Calculate Total Amount
-//           </button>
-//         </div>
-//         <div className="form-group">
-//           <label htmlFor="totalAmount">Total Amount:</label>
-//           <input
-//             type="text"
-//             id="totalAmount"
-//             name="totalAmount"
-//             value={totalAmount}
-//             readOnly
-//           />
-//         </div> */}
-//         <div className="form-group">
-//           <button className="btn-next" type="button" onClick={handleNextClick}>
-//             Next
-//           </button>
-//         </div>
-//       </form>)}
-      
-//     </div>
-//   );
-// };
-
-// export default UserInfo;
-
-
-
-
-
-
-
-
-
-// import React, { useState } from 'react';
-// import "./UserInfo.css"
-// import PaymentPage from './PaymentPage';
-// import { Navbar } from '../Home/Navbar';
-// import Footer from '../Home/Footer';
-
-// const UserInfo = () => {
-//   const [userInfo, setUserInfo] = useState({
-//     name: '',
-//     email: '',
-//     address: '',
-//     phone: '',
-//   });
-
-//   const [showPaymentPage, setShowPaymentPage] = useState(false);
-
-//   const handleInputChange = (event) => {
-//     const { name, value } = event.target;
-//     setUserInfo((prevState) => ({
-//       ...prevState,
-//       [name]: value,
-//     }));
-//   };
-
-//   const handleNextClick = () => {
-//     setShowPaymentPage(true);
-//   };
-
-//   return (
-//     <>
-//     <Navbar />
-//     <div className="container">
-      
-      
-//       {showPaymentPage ? (
-//         <PaymentPage userInfo={userInfo} />
-//       ) : (
-//         <form className='form-boxsd'>
-//           <h2 className="heading">User Information</h2>
-//           <div className="form-group">
-//             <label htmlFor="name">Name:</label>
-//             <input
-//               type="text"
-//               id="name"
-//               name="name"
-//               value={userInfo.name}
-//               onChange={handleInputChange}
-//               required
-//             />
-//           </div>
-//           <div className="form-group">
-//             <label htmlFor="email">Email:</label>
-//             <input
-//               type="email"
-//               id="email"
-//               name="email"
-//               value={userInfo.email}
-//               onChange={handleInputChange}
-//               required
-//             />
-//           </div>
-//           <div className="form-group">
-//             <label htmlFor="address">Address:</label>
-//             <input
-//               type="text"
-//               id="address"
-//               name="address"
-//               value={userInfo.address}
-//               onChange={handleInputChange}
-//               required
-//             />
-//           </div>
-//           <div className="form-group">
-//             <label htmlFor="phone">Phone:</label>
-//             <input
-//               type="text"
-//               id="phone"
-//               name="phone"
-//               value={userInfo.phone}
-//               onChange={handleInputChange}
-//               required
-//             />
-//           </div>
-//           <div className="form-group">
-//             <button className="btn-next" type="button" onClick={handleNextClick}>
-//               Next
-//             </button>
-//           </div>
-//         </form>
-//       )}
-//     </div>
-//     <Footer />
-//     </>
-//   );
-// };
-
-// export default UserInfo;
-
-import React, { useState } from 'react';
-import './UserInfo.css';
-import PaymentPage from './PaymentPage';
-
-const UserInfo = () => {
-  const [userInfo, setUserInfo] = useState({
-    name: '',
-    email: '',
-    address: '',
+export const UserInfo = () => {
+  const toast = useToast()
+  const dispatch = useDispatch()
+  const { carttotal } = useSelector((store) => {
+    return store
+  })
+  const [info, setInfo] = useState({
+    fname: '',
+    lname: '',
     phone: '',
-  });
+    email: ''
+  })
+  const navigate=useNavigate()
+  const [cart_total, setCartTotal] = useState(carttotal);
+  const [promo, setPromo] = useState("")
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setUserInfo((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-  const [showPaymentPage, setShowPaymentPage] = useState(false);
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Handle form submission logic here
+
+  const handleClick = () => {
+    if (
+      info.fname.trim() === '' ||
+      info.lname.trim() === '' ||
+      info.phone.trim() === '' ||
+      info.email.trim() === ''
+    ) {
+      alert('Please fill in all the fields');
+      return;
+    }
+      // console.log(info)
+    dispatch(userInfor(info))
+    setInfo({ ...info, fname: '', lname: '', phone: '', email: '' })
+    navigate('/payment')
+  }
+
+  const handleApply = () => {
+
+  
+    if (promo === "abid40") {
+      let val = cart_total * 0.4; let afterPromo = Math.floor(cart_total - val);
+      setCartTotal(afterPromo); dispatch(cartTotal(afterPromo))
+      toast({
+        title: 'promo aplied',
+        status: 'success',
+        duration: 9000,
+        isClosable: true,
+      })
+    }
+    else if (promo === "masai60") {
+      let val = cart_total * 0.4; let afterPromo = Math.floor(cart_total - val);
+      setCartTotal(afterPromo); dispatch(cartTotal(afterPromo))
+      toast({
+        title: 'promo aplied',
+        status: 'success',
+        duration: 9000,
+        isClosable: true,
+      })
+    }
     
-  };
-  const gotopay=()=>{
-    setShowPaymentPage(true);
+    setPromo('');
   }
 
   return (
-    <div className="user-info-containar">
-      
-      {showPaymentPage ? (
-        <PaymentPage userInfo={userInfo} />
-      ) : (<form className="user-info-form" onSubmit={handleSubmit}>
-        <h2 className="user-info-heading">User Information</h2>
-        <div className="form-group">
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={userInfo.name}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={userInfo.email}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="address">Address:</label>
-          <input
-            type="text"
-            id="address"
-            name="address"
-            value={userInfo.address}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="phone">Phone:</label>
-          <input
-            type="text"
-            id="phone"
-            name="phone"
-            value={userInfo.phone}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <button className="submit-button" type="submit" onClick={gotopay} >Submit</button>
-        </div>
-      </form>)}
-    </div>
-  );
-};
+    <Box className='abid-userInfo-container' >
+      <Box className='userInfo-head-abid'> <Heading fontSize={'3xl'} color={'gray.600'}>Your Information</Heading> </Box>
+      <Box className='userInfo-inner-abid' >
+        <Box width={"45%"}  >
+          <FormControl className='abid-user-form' isRequired>
 
-export default UserInfo;
+            <Input type='text' name="fname" placeholder='First name' value={info.fname} onChange={(e) => setInfo({ ...info, [e.target.name]: e.target.value })} />
+            <Input type='text' name='lname' placeholder='Last name' value={info.lname} onChange={(e) => setInfo({ ...info, [e.target.name]: e.target.value })} />
+            <Input type='number' name='phone' placeholder='Phone ' value={info.phone} onChange={(e) => setInfo({ ...info, [e.target.name]: e.target.value })} />
+            <Input type='email' name='email' placeholder='Email' value={info.email} onChange={(e) => setInfo({ ...info, [e.target.name]: e.target.value })} />
+          </FormControl>
+        </Box>
+        <Box className='promo-div-abid' width={'45%'}>
+          <Box className='promoo2'>
+            <Input placeholder='Enter Promo' w={[ "100%" ,"80%","60%", "60%"]} onChange={(e) => setPromo(e.target.value)} />
+            <Button id='userInfo-btn' w={"30%"} fontSize={"md"} size={"md"} onClick={handleApply}>Apply </Button>
+          </Box>
+          
+          <Box className='userInfo-total-box-abid' >
+
+            <Text id='total-on-user'   >Total    </Text>
+            <Text id='total-on-user'>${cart_total ? cart_total : "0"}</Text>
+          </Box>
+        </Box>
+      </Box>
+      <Box className='user-next-btn'> <Button id='userInfo-btn' w={"90%"} fontSize={"lg"} size={"md"} onClick={handleClick} >next</Button></Box>
+    </Box>
+  )
+}
+
+

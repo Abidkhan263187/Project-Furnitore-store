@@ -1,0 +1,41 @@
+.thank-you-page {
+    background-image: url('https://img.freepik.com/premium-photo/ecommerce-concept-delivery-service-mobile-application-transportation-delivery-by-vans-truck-motorbike-scooter-with-phone-screen-product-packages-gift-boxes-yellow-tone-3d-rendering_156429-3411.jpg?w=826');
+    background-size: cover;
+    background-position: center;
+  height: 600px;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+  }
+  
+  .thank-you-content {
+    background-color:#fffeec;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: left;
+    /* border: 1px solid; */
+    margin-left: 21.99%;
+    width: 245px;
+    font-size: small;
+  }
+  
+  .details-box {
+    margin-top: 20px;
+  }
+  
+  .details-box div {
+    margin-bottom: 10px;
+  }
+  
+  .details-box strong {
+    margin-right: 5px;
+  }
+  
+  h2 {
+    font-size: 24px;
+  }
+  
+  p {
+    font-size: 16px;
+  }
+  

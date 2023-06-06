@@ -1,116 +1,131 @@
-/* 
 
-.container {
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 50px;
+.abid-userInfo-container {
+  height: 600px;
+  display: flex;
+  
+  justify-content: space-between;
+  flex-direction: column;
+  
+}
 
+.userInfo-head-abid {
+  text-align: start;
+  margin-left: 10%;
+  margin-top: 30px;
+}
 
-  }
+.userInfo-inner-abid {
+border-radius: 10px;
+  margin: 10px auto 0px auto;
+  background-color: white;
+  display: flex;
+  padding: 20px 40px;
+  justify-content: space-between;
+  width: 80%;
+  height: 350px;
+}
+
+.abid-user-form {
+  height: 80%;
+  margin: 40px 0px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.promo-div-abid {
+  display: flex;
+  justify-content: space-between;
+  height: 80%;
+  margin: 40px 0px;
+  width: 45%;
+  flex-direction: column;
+}
+
+.promoo2 {
+  height: max-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.userInfo-total-box-abid {
+  height: max-content;
+  border: 1px solid gray;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 30px;
+  border-radius: 10px;
+}
+.user-next-btn{
+  width:12%;
+   margin: 0px 0px 100px 78%;
+}
+#userInfo-btn{
+  background-color: #ff9b0e;
+  color: white;
+  border-radius: 10px 0px 10px 0px;
+}
+#total-on-user{
+  font-size: large;
+  font-weight: 700;
+}
+.line{
+  color: gray;
   
-  .heading {
-    font-size: 24px;
-    margin-bottom: 10px;
+}
+
+@media (max-width: 767px) {
+ 
+  #total-on-user{
+    font-size: small;
+    font-weight: 700;
   }
+  .userInfo-total-box-abid {
   
-  .divider {
-    border: none;
-    border-top: 1px solid #ccc;
-    margin-bottom: 20px;
+    padding: 8px 10px;
+    border-radius: 10px;
   }
+  .promoo2 {
+    height: max-content;
   
-  .form-group {
-    margin-bottom: 20px;
+   display: flex;
+   flex-direction: column;
+    height: 100px;
+  }
+  #userInfo-btn{
+    background-color: #ff9b0e;
+    color: white;
+    font-size: small;
+    width: 70px;
+    height: 30px;
+    border-radius: 10px 0px 10px 0px;
+  }
+  .user-next-btn{
+    width:12%;
+     margin: 0px 0px 100px 72%;
+  }
+  .userInfo-inner-abid {
+      padding: 20px 10px;
     
-  }
+    }
+    .userInfo-inner-abid {
+        width: 90%;
+     
+      }
+      
   
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .btn-calculate,
-  .btn-next {
-    padding: 10px 20px;
-    background-color: teal;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .btn-calculate {
-    background-color: teal;
-  }
-  
-  .btn-next {
-    background-color: #007bff;
-  }
+}
 
-  .form-boxsd {
-    padding: 15px;
-    box-shadow: 7.6px 15.2px 15.2px hsl(0deg 0% 0% / 0.26);
-  } */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* CSS properties for medium screens */
+}
+
+/* Styles for large screens */
+@media (min-width: 1024px) {
+  /* CSS properties for large screens */
+}
 
 
 
-  .user-info-containar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .user-info-form {
-    width: 400px;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .user-info-heading {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .submit-button {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .submit-button:hover {
-    background-color: #0056b3;
-  }
-  

@@ -1,177 +1,100 @@
 
+import React, { useState } from 'react';
+import "./PaymentPage.css"
+import { Box, Button, Heading, Input, Radio, RadioGroup, Text } from '@chakra-ui/react';
+import PaymentCard from './PaymentCard';
+import { useSelector,useDispatch } from 'react-redux';
+import { storePaymentInfo } from '../../Redux/action';
+import { useNavigate } from 'react-router-dom';
+import { Cod } from './Cod';
 
 
-// import React, { useState } from 'react';
-// import "./PaymentPage.css"
-// import { Navbar } from '../Home/Navbar';
-// import Footer from '../Home/Footer';
+  const PaymentPage = () => {
+  
+  const navigate=useNavigate()
+  const dispatch=useDispatch()
+  const [paymentInfo,setPaymentInfo]=useState({
+    country:'',
+    city:'',
+    zip_code:'',
+    address:''
+  
+  })
+  const [value, setValue] = useState('1')
+  const {carttotal}=useSelector((store)=>{
+    return store;
+  })
 
+  const handlePaymentMethodChange = (newValue) => {
+    setValue(newValue);
+  }
+  const handleOrder = () => {
+    if (
+      paymentInfo.country.trim() === '' ||
+      paymentInfo.city.trim() === '' ||
+      paymentInfo.zip_code.trim() === '' ||
+      paymentInfo.address.trim() === ''
+    ) {
+      alert('Please fill in all the fields');
+      return;
+    }
+     dispatch(storePaymentInfo(paymentInfo))
+    setPaymentInfo({
+      country: '',
+      city: '',
+      zip_code: '',
+      address: ''
+    });
+     navigate('/thankyouPage')
+    console.log(paymentInfo);
+  };
 
-// const PaymentPage = () => {
-//   const [cardDetails, setCardDetails] = useState({
-//     cardNumber: '',
-//     cardName: '',
-//     expiryDate: '',
-//     cvv: '',
-//   });
-
-//   const [paymentMethod, setPaymentMethod] = useState('');
-
-//   const totalAmount = 99.99; // Replace with your actual total amount
-
-//   const handleInputChange = (event) => {
-//     const { name, value } = event.target;
-//     setCardDetails((prevState) => ({
-//       ...prevState,
-//       [name]: value,
-//     }));
-//   };
-
-//   const handlePaymentMethodChange = (event) => {
-//     setPaymentMethod(event.target.value);
-//   };
-
-//   const handlePlaceOrder = () => {
-//     // Logic for placing the order
-//   };
-
-//   return (
-//     <>
-//     <Navbar />
-//     <div className="payment-container">
-//       <div className="payment-summary">
-//         <h2 className="payment-heading">Payment Summary</h2>
-//         <div className="total-amount">
-//           <span>Total Amount:</span>
-//           <span>${totalAmount.toFixed(2)}</span>
-//         </div>
-//         <div className="payment-options">
-//           <h2 className="payment-heading">Payment Options</h2>
-//           <div className="payment-option">
-//             <input
-//               type="radio"
-//               id="cashOnDelivery"
-//               name="paymentMethod"
-//               value="cashOnDelivery"
-//               checked={paymentMethod === 'cashOnDelivery'}
-//               onChange={handlePaymentMethodChange}
-//             />
-//             <label htmlFor="cashOnDelivery">Cash on Delivery</label>
-//           </div>
-//           <div className="payment-option">
-//             <input
-//               type="radio"
-//               id="payByCard"
-//               name="paymentMethod"
-//               value="payByCard"
-//               checked={paymentMethod === 'payByCard'}
-//               onChange={handlePaymentMethodChange}
-//             />
-//             <label htmlFor="payByCard">Pay by Card</label>
-//           </div>
-//         </div>
-//       </div>
-//       {paymentMethod === 'payByCard' && (
-//         <div className="payment-form">
-//           <h2 className="payment-heading">Card Details</h2>
-//           <form>
-//             <div className="form-group">
-//               <label htmlFor="cardNumber">Card Number:</label>
-//               <input
-//                 type="text"
-//                 id="cardNumber"
-//                 name="cardNumber"
-//                 value={cardDetails.cardNumber}
-//                 onChange={handleInputChange}
-//                 required
-//               />
-//             </div>
-//             <div className="form-group">
-//               <label htmlFor="cardName">Cardholder Name:</label>
-//               <input
-//                 type="text"
-//                 id="cardName"
-//                 name="cardName"
-//                 value={cardDetails.cardName}
-//                 onChange={handleInputChange}
-//                 required
-//               />
-//             </div>
-//             <div className="form-row">
-//               <div className="form-group">
-//                 <label htmlFor="expiryDate">Expiry Date:</label>
-//                 <input
-//                   type="text"
-//                   id="expiryDate"
-//                   name="expiryDate"
-//                   value={cardDetails.expiryDate}
-//                   onChange={handleInputChange}
-//                   required
-//                 />
-//               </div>
-//               <div className="form-group">
-//                 <label htmlFor="cvv">CVV:</label>
-//                 <input
-//                   type="text"
-//                   id="cvv"
-//                   name="cvv"
-//                   value={cardDetails.cvv}
-//                   onChange={handleInputChange}
-//                   required
-//                 />
-//               </div>
-//             </div>
-//           </form>
-//         </div>
-//       )}
-//       <div className="place-order">
-//         <button className="place-order-button" onClick={handlePlaceOrder}>
-//           Place Order
-//         </button>
-//       </div>
-//     </div>
-//     <Footer />
-//     </>
-//   );
-// };
-
-// export default PaymentPage;
-
-
-
-
-
-
-//----------------------------------------------------------------------------------------------
-
-import React from 'react';
-import './PaymentPage.css';
-
-const handelalart=()=>{
-  alert('Payment successful!. Go To Cart');
-}
-
-const PaymentPage = () => {
   return (
-    <div className="payment-page">
-      <h2>Payment Details</h2>
-      <form className="payment-form">
-        <div className="form-group">
-          <label htmlFor="cardNumber">Card Number</label>
-          <input type="text" id="cardNumber" />
-        </div>
-        <div className="form-group">
-          <label htmlFor="expiration">Expiration Date</label>
-          <input type="text" id="expiration" />
-        </div>
-        <div className="form-group">
-          <label htmlFor="cvv">CVV</label>
-          <input type="text" id="cvv" />
-        </div>
-        <button className="submit-button" type="submit" onClick={handelalart} >Pay Now</button>
-      </form>
-    </div>
-  );
-};
+    <Box className='abid-payment-container'>
+      <Box className='pyment-head-abid'> <Heading fontSize={'3xl'} color={'gray.600'}>Payment page</Heading> </Box>
+      <Box className='payment-inner-abid'>
+        {/* left */}
+        <Box className='payment-left'  width="45%">
+          <Box className='payment-left-first' h="40%">
+            <Input placeholder='State' name='country' value={paymentInfo.country} onChange={(e)=>setPaymentInfo({...paymentInfo,[e.target.name]:e.target.value})}/>
+            <Input placeholder='City' name='city' value={paymentInfo.city}  onChange={(e)=>setPaymentInfo({...paymentInfo,[e.target.name]:e.target.value})} />
+          </Box>
+          <Box className='payment-left-sec' h="60%" >
+            <Text fontSize={['sm','sm', 'md', 'xl']}>Payment Method</Text>
+            <RadioGroup onChange={handlePaymentMethodChange} value={value} display={'flex'} flexDirection={'column'}>
+              <Radio   colorScheme='orange' value='1'> <Text fontSize={["sm" ,"sm","sm","md"]}> Pay on Delivery</Text></Radio>
+              <Radio colorScheme='orange' value='2'> <Text fontSize={["sm" ,"sm","sm","md"]}> Pay by Card </Text></Radio>
+            </RadioGroup>
+          </Box>
+        </Box>
 
-export default PaymentPage;
+        {/* right */}
+        <Box className='payment-right'  width="45%">
+          <Box className='payment-right-first'  h="40%">
+            <Input placeholder='Zip Code' name='zip_code' value={paymentInfo.zip_code}  onChange={(e)=>setPaymentInfo({...paymentInfo,[e.target.name]:e.target.value})}/>
+            <Input placeholder='Address' name='address' value={paymentInfo.address}  onChange={(e)=>setPaymentInfo({...paymentInfo,[e.target.name]:e.target.value})}/>
+          </Box>
+
+          <Box  margin={'auto'}  h={'20%'}>{value==='2' ? <PaymentCard/>:<Cod/>}</Box>
+         
+       
+          <Box className='payment-sec' mt={'10px'} h="40%">
+            <hr />
+       <Box ><Text id='inner-text'>SubTotal</Text><Text id='inner-text'>${carttotal?carttotal-15:"0"}</Text></Box>
+       <Box> <Text id='inner-text'>Shipping</Text><Text id='inner-text'>$15</Text></Box>
+       <Box> <Text id='inner-text'>Total</Text><Text id='inner-text'>${carttotal?carttotal:'0'}</Text></Box>
+      </Box> 
+        
+        </Box>
+      </Box>
+      <Box className='payment-next-btn'>
+        <Button id='payment-btn' onClick={handleOrder}>
+          Order
+        </Button>
+      </Box>
+   
+    </Box>
+  );
+
+  }
+  export default PaymentPage;
