@@ -1,4 +1,6 @@
+
 import { ADDPARAMS, AUTH, CARTARRAY, CART_TOTAL, PAYMENT_INFO, PERMIT, SINGLE, UPLOAD_PROD_DATA, USER_INFO } from "./actiontypes";
+
 const inituserArr={
     userArr:[],
     access:false,
@@ -8,7 +10,8 @@ const inituserArr={
     prod_Array:[],
     userInfo:{},
     paymentInfo:{},
-    carttotal:''
+    carttotal:'',
+    cart:[]
 
 }
 
@@ -27,6 +30,7 @@ export const reducer=(state=inituserArr,action)=>{
         case CARTARRAY:{
             return{...state,cart:action.payload}
         }
+
         case UPLOAD_PROD_DATA:{
             return{...state,prod_Array:action.payload}
         }
@@ -41,5 +45,5 @@ export const reducer=(state=inituserArr,action)=>{
         }
         default: return state;
     }
+  }
     
-}

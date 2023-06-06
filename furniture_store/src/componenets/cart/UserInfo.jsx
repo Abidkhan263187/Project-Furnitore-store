@@ -1,3 +1,4 @@
+
 import { Box, Button, FormControl, FormLabel, Heading, Input, Text, useToast } from '@chakra-ui/react'
 import React, { useEffect } from 'react'
 import './UserInfo.css'
@@ -99,3 +100,5 @@ export const UserInfo = () => {
     </Box>
   )
 }
+
+

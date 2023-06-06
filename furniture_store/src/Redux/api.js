@@ -1,90 +1,100 @@
+
 import axios from "axios"
 import { Authenticate, cartArray, singlePRoduct, uploadProductsData } from "./action"
 
- export const getUserAuthenticate=()=>(dispatch)=>{
 
-axios.get(`https://myjson.onrender.com/users`).then(({data})=>{
-    console.log(data)
-    dispatch(Authenticate(data))
-}).catch((error)=>{
-    console.log(error)
-})
+export const getUserAuthenticate = () => (dispatch) => {
+
+    axios.get(`https://myjson.onrender.com/users`).then(({ data }) => {
+        console.log(data)
+        dispatch(Authenticate(data))
+    }).catch((error) => {
+        console.log(error)
+    })
 }
-export const getProduct=(id,product)=>(dispatch)=>{
-    axios.get(`https://myjson.onrender.com/${product}/${id}`).then(({data})=>{
-        // console.log(data)
+
+
+export const getProduct = (id) => (dispatch) => {
+    axios.get(`https://myjson.onrender.com/sofas/${id}`).then(({ data }) => {
+
         dispatch(singlePRoduct(data))
-    }).catch((error)=>{
+    }).catch((error) => {
         console.log(error)
     })
-   
-}
-export  const addtoCart=(product)=>(dispatch)=>{
 
-    axios.post(`https://myjson.onrender.com/furnitureCart`,product).then(({data})=>{
+}
+export const addtoCart = (product) => (dispatch) => {
+
+
+    axios.post(`https://myjson.onrender.com/furnitureCart`, product).then(({ data }) => {
         dispatch(cartArray(data))
-    }).catch((error)=>{
+
+    }).catch((error) => {
         console.log(error)
     })
-
 }
-export const getCartArray=()=>(dispatch)=>{
-    axios.get(`https://myjson.onrender.com/furnitureCart`).then(({data})=>{
+
+export const getCartArray = () => (dispatch) => {
+    axios.get(`https://myjson.onrender.com/furnitureCart`).then(({ data }) => {
         // console.log(data)
         dispatch(cartArray(data))
-    }).catch((error)=>{
+    }).catch((error) => {
         console.log(error)
     })
 }
 
-export const removeFromCart=(id)=>(dispatch)=>{
+export const removeFromCart = (id) => (dispatch) => {
     axios.delete(`https://myjson.onrender.com/furnitureCart/${id}`)
     dispatch(getCartArray());
 }
-export const getProductArray=(page_name)=>(dispatch)=>{
 
-    axios.get(`https://myjson.onrender.com/${page_name}`).then(({data})=>{
+export const getProductArray = (page_name) => (dispatch) => {
+    axios.get(`https://myjson.onrender.com/${page_name}`).then(({ data }) => {
         //  console.log(data)
-         dispatch(uploadProductsData(data))
-    }).catch((error)=>{
-        console.log(error);
-    })
-}
-export const getSortArray=(sort,page_name)=>(dispatch)=>{
-        
-    axios.get(`https://myjson.onrender.com/${page_name}?_sort=price&_order=${sort}`).then(({data})=>{
         dispatch(uploadProductsData(data))
-    }).catch((error)=>{
+    }).catch((error) => {
+        console.log(error);
+    })
+}
+
+export const getSortArray = (sort, page_name) => (dispatch) => {
+
+    axios.get(`https://myjson.onrender.com/${page_name}?_sort=price&_order=${sort}`).then(({ data }) => {
+        dispatch(uploadProductsData(data))
+    }).catch((error) => {
         console.log(error);
     })
 }
 
 
 
-export const getFilterArray = (cat, manu, rat,page) => (dispatch) => {
-  console.log(cat, manu, rat);
+export const getFilterArray = (cat, manu, rat, page) => (dispatch) => {
+    console.log(cat, manu, rat);
 
-  let url = `https://myjson.onrender.com/${page}`;
+    let url = `https://myjson.onrender.com/${page}`;
 
-  if (cat) {
-    url += `?cat=${cat}`;
-  }
+    if (cat) {
+        url += `?cat=${cat}`;
+    }
 
-  if (manu) {
-    url += `${cat ? '&' : '?'}manufacturer=${manu}`;
-  }
+    if (manu) {
+        url += `${cat ? '&' : '?'}manufacturer=${manu}`;
+    }
 
-  if (rat) {
-    url += `${cat || manu ? '&' : '?'}rating_gte=${rat}`;
-  }
+    if (rat) {
+        url += `${cat || manu ? '&' : '?'}rating_gte=${rat}`;
+    }
 
-  axios
-    .get(url)
-    .then(({ data }) => {
-      dispatch(uploadProductsData(data));
-      console.log(data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-};
+    axios
+        .get(url)
+        .then(({ data }) => {
+            dispatch(uploadProductsData(data));
+            console.log(data);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+}
+
+
+

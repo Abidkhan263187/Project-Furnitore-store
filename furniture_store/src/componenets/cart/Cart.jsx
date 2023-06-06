@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,6 +7,7 @@ import { Button, Heading, Progress, Text } from '@chakra-ui/react';
 import "./Cart.css"
 import { backIn } from 'framer-motion';
 import { cartTotal } from '../../Redux/action';
+
 export const Cart = () => {
   const [show, setShow] = useState(false)
   const [total, setTotal] = useState()
@@ -18,6 +20,7 @@ export const Cart = () => {
     dispatch(getCartArray())
 
   }, [show])
+  
   const [cartItems, setCartItems] = useState([]);
   useEffect(() => {
     window.scrollTo(0, 0); // Scroll to the top of the page on component mount
@@ -51,6 +54,7 @@ export const Cart = () => {
       })
     );
   };
+
 
 
 
@@ -129,3 +133,8 @@ export const Cart = () => {
     </div>
   );
 }
+
+
+
+
+

@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import "./PaymentPage.css"
 import { Box, Button, Heading, Input, Radio, RadioGroup, Text } from '@chakra-ui/react';
@@ -8,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import { Cod } from './Cod';
 
 
-const PaymentPage = () => {
+  const PaymentPage = () => {
   
   const navigate=useNavigate()
   const dispatch=useDispatch()
@@ -93,8 +94,7 @@ const PaymentPage = () => {
       </Box>
    
     </Box>
-     
   );
-};
 
-export default PaymentPage;
+  }
+  export default PaymentPage;

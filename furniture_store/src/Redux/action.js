@@ -1,4 +1,4 @@
-import axios from 'axios'
+
 import {ADDPARAMS, AUTH,CARTARRAY,CART_TOTAL,PAYMENT_INFO,PERMIT, SINGLE, UPLOAD_PROD_DATA, USER_INFO} from './actiontypes'
 
 
@@ -55,3 +55,6 @@ export const storePaymentInfo=(payload)=>{
         payload,
     }
 }
+
+
+

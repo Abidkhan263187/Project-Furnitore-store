@@ -1,6 +1,6 @@
 import React from 'react'
-import {Image,Stack,Text,Divider,ButtonGroup,Heading, HStack, Box} from '@chakra-ui/react'
-  import { Card, CardHeader,Button, CardBody, CardFooter } from '@chakra-ui/react'
+import {Image,Stack,Text,ButtonGroup,Heading, HStack, Box} from '@chakra-ui/react'
+  import { Card,Button, CardBody, CardFooter } from '@chakra-ui/react'
   import { Link, useParams } from 'react-router-dom'
  import './Card.css'
 import { addtoCart } from '../../Redux/api'
