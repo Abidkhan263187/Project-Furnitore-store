@@ -13,9 +13,10 @@ import ThankYouPage from '../cart/ThankYouPage '
 export const Allroutes = () => {
 
   
-  // const{access}=useSelector((store)=>{
-  //   return store
-  // })
+  const{access}=useSelector((store)=>{
+    
+    return store;
+  })
 
 
   return (
@@ -25,10 +26,10 @@ export const Allroutes = () => {
             <Route path='/login' element={<LoginPage/>}/>
             <Route path='/signup' element={<SignupPage/>}/>
             <Route path="/item"  element={<ItemDescription/>}/>
-            <Route path='/cart' element={<Cart/>}/>
+            <Route path='/cart' element={<Cart/>} />
             <Route path='/:product/:id' element={<ItemDescription/>}/> {/*temporary*/}
             <Route path='/payment' element={<PaymentPage/>}/>
-            <Route path='/userinfo' element={<UserInfo/>}/>
+            <Route path='/userinfo'  element={access?<UserInfo/> : <Navigate to={'/login'}/>}/>
             <Route path='/:product' element={<Product/>}/>
             <Route path='/thankyouPage' element={<ThankYouPage/>} />
         </Routes>

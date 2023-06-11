@@ -6,7 +6,7 @@ import { Authenticate, cartArray, singlePRoduct, uploadProductsData } from "./ac
 export const getUserAuthenticate = () => (dispatch) => {
 
     axios.get(`https://myjson.onrender.com/users`).then(({ data }) => {
-        console.log(data)
+        // console.log(data)
         dispatch(Authenticate(data))
     }).catch((error) => {
         console.log(error)
@@ -14,8 +14,8 @@ export const getUserAuthenticate = () => (dispatch) => {
 }
 
 
-export const getProduct = (id) => (dispatch) => {
-    axios.get(`https://myjson.onrender.com/sofas/${id}`).then(({ data }) => {
+export const getProduct = (id,prod) => (dispatch) => {
+    axios.get(`https://myjson.onrender.com/${prod}/${id}`).then(({ data }) => {
 
         dispatch(singlePRoduct(data))
     }).catch((error) => {

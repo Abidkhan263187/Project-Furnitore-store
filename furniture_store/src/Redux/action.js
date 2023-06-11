@@ -1,10 +1,16 @@
 
-import {ADDPARAMS, AUTH,CARTARRAY,CART_TOTAL,PAYMENT_INFO,PERMIT, SINGLE, UPLOAD_PROD_DATA, USER_INFO} from './actiontypes'
+import { AUTH,CARTARRAY,CART_TOTAL,CLIENT_NAME,PAYMENT_INFO,PERMIT, SINGLE, UPLOAD_PROD_DATA, USER_INFO } from './actiontypes'
 
 
  export const Authenticate=(payload)=>{
     return{
         type:AUTH,
+        payload
+    }
+}
+export const clientName=(payload)=>{
+    return{
+        type:CLIENT_NAME,
         payload
     }
 }

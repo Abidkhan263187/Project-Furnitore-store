@@ -4,9 +4,12 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Footer from "../Home/Footer";
 import axios from "axios"
+import { clientName } from "../../Redux/action";
+import { useDispatch } from "react-redux";
 
 function SignupPage() {
     const navigate = useNavigate()
+    const dispatch=useDispatch()
 
     const [sign, setSign] = useState({
         name: "",
@@ -18,15 +21,20 @@ function SignupPage() {
         e.preventDefault();
         
         if (sign.email === '' || sign.name === '' || sign.password === '') {
+            
             alert("fill all the field")
             setSign({ ...sign, email: '', password: "" })
             return
         }
-        axios.post(`https://myjson.onrender.com/users`, sign)
-        console.log(sign)
-        alert("Account Created Succesfully")
-        navigate('/login')
-        setSign({ ...sign, name: '', email: '', password: '' })
+        else{
+            // dispatch(clientName(sign.name))
+            axios.post(`https://myjson.onrender.com/users`, sign)
+            console.log(sign.name)
+            alert("Account Created Succesfully")
+            navigate('/login')
+            setSign({ ...sign, name: '', email: '', password: '' })
+        }
+      
     };
 
     return (

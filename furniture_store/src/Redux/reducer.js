@@ -1,5 +1,5 @@
 
-import { ADDPARAMS, AUTH, CARTARRAY, CART_TOTAL, PAYMENT_INFO, PERMIT, SINGLE, UPLOAD_PROD_DATA, USER_INFO } from "./actiontypes";
+import {  AUTH, CARTARRAY, CART_TOTAL, CLIENT_NAME, PAYMENT_INFO, PERMIT, SINGLE, UPLOAD_PROD_DATA, USER_INFO } from "./actiontypes";
 
 const inituserArr={
     userArr:[],
@@ -11,7 +11,8 @@ const inituserArr={
     userInfo:{},
     paymentInfo:{},
     carttotal:'',
-    cart:[]
+    name:''
+   
 
 }
 
@@ -20,6 +21,9 @@ export const reducer=(state=inituserArr,action)=>{
     switch(action.type){
         case AUTH:{
           return{...state,userArr:action.payload}
+        }
+        case CLIENT_NAME:{
+            return{...state,name:action.payload}
         }
         case PERMIT:{
             return{...state,access:true}

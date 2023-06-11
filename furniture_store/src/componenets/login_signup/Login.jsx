@@ -5,12 +5,12 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../Home/Footer";
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserAuthenticate } from "../../Redux/api";
-import { givePermmission } from "../../Redux/action";
-import { Alert, Button } from "@chakra-ui/react";
+import { Authenticate, clientName, givePermmission } from "../../Redux/action";
+
 
 function LoginPage() {
 
-  const { access, userArr } = useSelector((store) => {
+  const {  userArr } = useSelector((store) => {
     return store
   })
 
@@ -27,7 +27,7 @@ function LoginPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (user.password == '' || user.email == '') {
+    if (user.password === '' || user.email === '') {
       alert("fill all the field")
       setUser({ ...user, email: '', password: "" })
       return
@@ -35,12 +35,15 @@ function LoginPage() {
     let flag=-1;
     userArr.forEach((elem) => {
       if (elem.email === user.email && elem.password === user.password) {
+        dispatch(clientName(elem.name))
         flag = 0;
       }
     })
 
     if (flag === 0) {
       alert("Login Successfully!")
+     
+      dispatch(Authenticate("true"))
       navigate('/')
       dispatch(givePermmission(true))
     } else {
