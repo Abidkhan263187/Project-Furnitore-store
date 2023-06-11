@@ -7,6 +7,6 @@ import { reducer } from "./reducer";
 export const store = createStore(reducer,applyMiddleware(thunk));
 
 
-// store.subscribe(()=>{
-//     console.log(store.getState().paymentInfo);
-// })
+store.subscribe(()=>{
+    console.log(store.getState().name);
+})

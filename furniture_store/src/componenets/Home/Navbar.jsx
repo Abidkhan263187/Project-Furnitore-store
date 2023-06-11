@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './nav.css';
-import { useDispatch } from 'react-redux';
-import { useSearchParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const dispatch = useDispatch();
-
+  const {access,name}=useSelector((store)=>{
+    return store;
+  })
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.pageYOffset;
@@ -46,7 +47,7 @@ export const Navbar = () => {
           <Link to={'/fav'}><p><i className="fa-solid fa-heart"></i></p></Link>
           <Link className='shuffle'> <p><i className="fa-solid fa-shuffle"></i></p></Link>
           <Link to={'/cart'}> <p><i className="fa-sharp fa-solid fa-cart-shopping"></i></p></Link>
-          <Link to={'/signup'}><p><i className="fa-solid fa-user"></i></p></Link>
+          <Link to={'/signup'} ><p>{access?name:<i className="fa-solid fa-user"></i>}</p></Link>
         </div>
         <div className='abid-nav3'>
           <Link><p><i className="fa-solid fa-bars"></i></p></Link>
