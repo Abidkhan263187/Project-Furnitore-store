@@ -1,4 +1,4 @@
-<h2>Repository Name: FurnitureStoreApp</h2>
+<h2>Furniture Store</h2>
 Link: https://furniture-store-mu.vercel.app/
 
 <h2>Description:</h2>
