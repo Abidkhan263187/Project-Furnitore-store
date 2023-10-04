@@ -4,47 +4,6 @@
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-
-.abid-nav1 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 50%;
-  
-}
-.abid-nav1 h3{
-    color: #323232;
-    font-size: larger;
-    font-weight: 600;
-}
-
-.abid-nav2 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 25%;
-    margin-left: 50px;
-}
-.abid-search-div{
-    background-color: rgb(252, 250, 250);
-    padding-left:20px;
-    border-radius:5px;
-}
-.abid-serach-nav {
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    padding: 5px 10px 5px 20px;
-    background-color: rgb(252, 250, 250);
-}
-
-.abid-nav3 {
-    display: flex;
-    justify-content: space-between;
-    /* border: 1px solid; */
-    width: 5%;
-}
-
 .abid-nav-container {
     display: flex;
     justify-content: space-between;
@@ -59,13 +18,64 @@
     transition: background-color 0.3s ease-in-out;
   }
   
+.abid-nav1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+  
+}
+#logo_link{
+    width: max-content;
+}
+
+.abid-nav2 {
+    display: flex;
+    
+    align-items: center;
+    width: 35%;
+    gap: 10px;
+  
+}
+
+
+.abid-search-div{
+display: flex;
+justify-content: space-between;
+background-color: white;
+padding: 3px 10px;
+border-radius: 5px;
+width: 60%;
+
+}
+.abid-serach-nav {
+width: 50%;
+border: none;
+outline: none;
+
+}
+#symbol_mob_nav{
+    font-size: x-large;
+}
+#symbols_div{
+    width: 50%;
+   display: grid;
+   justify-content: space-between;
+   grid-template-columns: repeat(4,1fr);
+   align-items: center;
+   
+}
+
   .abid-nav-container.sticky {
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
-  .nav-logo{
-    font-size: 20px;
+  .nav_logo{
+   width: 5%;
+   border-radius: 5px;
+   background-color: transparent;
+
   }
 .abid-nav-container a {
     text-decoration: none;
@@ -78,58 +88,145 @@
     
     transform: scale(1);
 }
+/* mobile nav  */
+#mob_nav{
+    display: none;
+}
+#cityname{
+    position: absolute;
+    left: 1%;
+    top: 100%;
+    color: white;
+    background-color: #494949;
+    padding: 1px 10px;
+    border-radius: 10px;
+}
 
 @media (max-width: 767px) {
     /* CSS properties for small screens */
     .abid-search-div{
         display: flex;
-       
-        width: 80px;
+       background-color: transparent;
+        width: max-content;
         height: 20px;
         font-size: xx-small;
         padding-left:5px;
     }
     .abid-serach-nav{
         width: 100%;
-       
+        display: none;
+    }
+    .nav_logo{
+        width: 11%;
+        border-radius: 5px;
+        background-color: transparent;
+     
+       }
+    #symbol{
+       font-size: medium;
     }
     .abid-nav2 { 
-        width: 100%;  
-       
-       
+        width: 100%; 
+        display: none;  
+    }
+    .abid-nav1{
+        display: none;
     }
     .abid-nav3{
         display: none;
+    
     }
    .shuffle{
         display: none;
     }
     .abid-a1{
-        display:none
+        display:none;
+      
     }
+    .abid-nav-container a{
+        width: 100%;
+    }
+    .abid-a>h3{
+        border-bottom: 1px solid;
+        font-size:large;
+        color: white;
+   
+    }
+    #symbol_mob_nav{
+        font-size:large;
+        color: white;
+    }
+    #sybmol_mob{
+        border-bottom: 1px solid;
+        font-size:large;
+        color: white;
+    }
+    #mob_menue{
+        position: absolute;
+        right: 0px;
+        top: 100%;
+        width: 40%;
+        background-color: #494949;
+       border-radius: 10px;
+        transition: opacity 0.8s ease-in-out /* Add a smooth transition effect */
+    }
+    #mob_nav{
+        display: flex;
+    }
+   
  
   }
 
   /* Styles for medium screens */
   @media (min-width: 768px) and (max-width: 1023px) {
     /* CSS properties for medium screens */
-    .abid-search-div{
+    #mob_nav{
         display: flex;
-        /* border: 1px solid; */
-        width: 60%;
-        background-color:white;
-        padding-left:20px;
-        border-radius:5px;
-        
-    }
-    .abid-serach-nav{
-        width: 100%;
     }
     .abid-nav2 { 
-        width: 30%;  
+        width: 100%; 
+        display: none;  
+    }
+    .abid-nav1{
+        display: none;
     }
     .abid-nav3{
         display: none;
+    
+    }
+   .shuffle{
+        display: none;
+    }
+    .abid-a1{
+        display:none;
+      
+    }
+    #mob_menue{
+        position: absolute;
+        right: 0px;
+        top: 100%;
+        width: 40%;
+        background-color: #494949;
+       border-radius: 10px;
+        transition: opacity 0.8s ease-in-out /* Add a smooth transition effect */
+    }
+    .abid-nav-container a{
+        width: 100%;
+    }
+    .abid-a>h3{
+        border-bottom: 1px solid;
+        font-size:large;
+        color: white;
+   
+    }
+    #symbol_mob_nav{
+        font-size:large;
+        color: white;
+    }
+    #sybmol_mob{
+        border-bottom: 1px solid;
+        font-size:large;
+        color: white;
     }
     
   }
@@ -137,13 +234,13 @@
   /* Styles for large screens */
   @media (min-width: 1024px) {
    
-    .abid-search-div{
+    /* .abid-search-div{
         display: flex;
         width: 70%;
     }
     .abid-nav2 { 
         width: 30%;  
-    }
+    } */
   }
 
  

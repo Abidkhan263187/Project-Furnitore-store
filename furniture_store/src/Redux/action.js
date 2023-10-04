@@ -1,5 +1,5 @@
 
-import { AUTH,CARTARRAY,CART_TOTAL,CLIENT_NAME,PAYMENT_INFO,PERMIT, SINGLE, UPLOAD_PROD_DATA, USER_INFO } from './actiontypes'
+import { AUTH,CARTARRAY,CART_TOTAL,CLIENT_NAME,LATITUDE,LONGITUDE,PAYMENT_INFO,PERMIT, SINGLE, UPLOAD_PROD_DATA, USER_INFO } from './actiontypes'
 
 
  export const Authenticate=(payload)=>{
@@ -14,6 +14,19 @@ export const clientName=(payload)=>{
         payload
     }
 }
+export const setLatitide=(payload)=>{
+    return{
+      type:LATITUDE,
+      payload
+    }
+  }
+  export const  setLongitide=(payload)=>{
+      return {
+          type:LONGITUDE,
+          payload
+      }
+  
+  }
 
 export const  givePermmission=(payload)=>{
 return{

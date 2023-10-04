@@ -22,6 +22,7 @@ export const Cart = () => {
   }, [show])
   
   const [cartItems, setCartItems] = useState([]);
+  
   useEffect(() => {
     window.scrollTo(0, 0); // Scroll to the top of the page on component mount
   }, []);
@@ -34,8 +35,7 @@ export const Cart = () => {
 
 
   const increaseQuantity = (itemId) => {
-    setCartItems((prevItems) =>
-      prevItems.map((item) => {
+    setCartItems((prevItems) =>prevItems.map((item) => {
         if (item.id === itemId) {
           return { ...item, quantity: item.quantity + 1 };
         }

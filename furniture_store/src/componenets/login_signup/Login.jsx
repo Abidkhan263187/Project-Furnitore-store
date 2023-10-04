@@ -9,13 +9,13 @@ import { Authenticate, clientName, givePermmission } from "../../Redux/action";
 
 
 function LoginPage() {
-
-  const {  userArr } = useSelector((store) => {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const { userArr } = useSelector((store) => {
     return store
   })
 
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
+
   const [user, setUser] = useState({
     email: '',
     password: ''
@@ -27,25 +27,20 @@ function LoginPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (user.password === '' || user.email === '') {
-      alert("fill all the field")
-      setUser({ ...user, email: '', password: "" })
-      return
-    }
-    let flag=-1;
+
+    let flag = -1;
     userArr.forEach((elem) => {
       if (elem.email === user.email && elem.password === user.password) {
-        dispatch(clientName(elem.name))
         flag = 0;
+       sessionStorage.setItem('userName',JSON.stringify(elem.name))
       }
     })
 
     if (flag === 0) {
       alert("Login Successfully!")
-     
       dispatch(Authenticate("true"))
-      navigate('/')
       dispatch(givePermmission(true))
+      window.location.href='/'
     } else {
       alert("Wrong Credential!")
     }
@@ -55,7 +50,7 @@ function LoginPage() {
 
   return (
     <><div className="login-container">
-      <h2>Sign-In</h2>
+      <h2>Login Page</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="email">Email or mobile phone number</label>
@@ -64,6 +59,7 @@ function LoginPage() {
             id="email"
             name="email"
             value={user.email}
+            required
             onChange={(e) => setUser({ ...user, [e.target.name]: e.target.value })} />
         </div>
         <div className="form-group">
@@ -73,13 +69,14 @@ function LoginPage() {
             id="password"
             name="password"
             value={user.password}
+            required
             onChange={(e) => setUser({ ...user, [e.target.name]: e.target.value })} />
         </div>
         <div className="form-group">
           <input type="submit" value="Sign In" />
           <div className="form-help">
             <Link to="#">Forgot your password?</Link>
-            <Link style={{ marginLeft: "10px" }} to={'/signup'}>Back to SignUp</Link>
+            <Link style={{ marginLeft: "10px",color:"blue",textDecoration:"underline" }} to={'/signup'}> SignUp</Link>
           </div>
         </div>
       </form>

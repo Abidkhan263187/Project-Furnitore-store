@@ -19,22 +19,11 @@ function SignupPage() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
-        if (sign.email === '' || sign.name === '' || sign.password === '') {
-            
-            alert("fill all the field")
-            setSign({ ...sign, email: '', password: "" })
-            return
-        }
-        else{
-            // dispatch(clientName(sign.name))
             axios.post(`https://myjson.onrender.com/users`, sign)
-            console.log(sign.name)
             alert("Account Created Succesfully")
             navigate('/login')
             setSign({ ...sign, name: '', email: '', password: '' })
-        }
-      
+        
     };
 
     return (
@@ -48,6 +37,7 @@ function SignupPage() {
                         id="name"
                         name="name"
                         value={sign.name}
+                        required
                         onChange={(e) => setSign({ ...sign, [e.target.name]: e.target.value })}
                         className="abid-input" />
                 </div>
@@ -57,6 +47,7 @@ function SignupPage() {
                         type="email"
                         id="email"
                         name="email"
+                        required
                         value={sign.email}
                         onChange={(e) => setSign({ ...sign, [e.target.name]: e.target.value })}
                         className="abid-input" />
@@ -67,6 +58,7 @@ function SignupPage() {
                         type="password"
                         id="password"
                         name="password"
+                        required
                         value={sign.password}
                         onChange={(e) => setSign({ ...sign, [e.target.name]: e.target.value })}
                         className="abid-input" />

@@ -5,6 +5,9 @@ export const PERMIT="PERMIT"
 export const SINGLE="SINGLE"
 export const CARTARRAY="CARTARRAY"
 export const CLIENT_NAME="CLIENT_NAME"
+export const LATITUDE='LATITUDE'
+export const CITY_NAME='CITY_NAME'
+export const LONGITUDE='LONGITUDE'
 
 export const GET_PROD_ARRAY="GET_PROD_ARRAY"
 export const UPLOAD_PROD_DATA="UPLOAD_PROD_DATA"

@@ -13,10 +13,7 @@ import ThankYouPage from '../cart/ThankYouPage '
 export const Allroutes = () => {
 
   
-  const{access}=useSelector((store)=>{
-    
-    return store;
-  })
+const access =JSON.parse(sessionStorage.getItem('Fur_user'))||''
 
 
   return (
@@ -26,7 +23,7 @@ export const Allroutes = () => {
             <Route path='/login' element={<LoginPage/>}/>
             <Route path='/signup' element={<SignupPage/>}/>
             <Route path="/item"  element={<ItemDescription/>}/>
-            <Route path='/cart' element={<Cart/>} />
+            <Route path='/cart' element={access?<Cart/>:<Navigate to={'/login'}/>} />
             <Route path='/:product/:id' element={<ItemDescription/>}/> {/*temporary*/}
             <Route path='/payment' element={<PaymentPage/>}/>
             <Route path='/userinfo'  element={access?<UserInfo/> : <Navigate to={'/login'}/>}/>

@@ -9,9 +9,12 @@ import { BestSeller } from './BestSeller';
 import { SecondNav } from './SecondNav';
 import Footer from './Footer';
 import { Category } from './Category';
+import { geolocator_coords, getCityName } from '../geolocator';
+import {useDispatch, useSelector} from 'react-redux'
 
 export const Home = () => {
-
+  const dispatch=useDispatch()
+  const { lati, longi } = useSelector((store) => store)
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -50,6 +53,14 @@ export const Home = () => {
       items: 1
     }
   };
+  useEffect(()=>{
+    dispatch(geolocator_coords())
+  },[])
+
+  useEffect(() => {
+    dispatch(getCityName(lati, longi))
+  }, [lati, longi])
+
 
   useEffect(() => {
     window.scrollTo(0, 0); // Scroll to the top of the page on component mount
