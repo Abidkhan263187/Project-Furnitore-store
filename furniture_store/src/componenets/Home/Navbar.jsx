@@ -70,7 +70,7 @@ export const Navbar = () => {
         {/*  for mobile */}
         <Flex id='mob_nav' w={'100%'} justifyContent={'space-between'}>
         <Image onClick={()=>navigate('/')} class="nav_logo" src='https://w7.pngwing.com/pngs/729/1006/png-transparent-furniture-logo-home-design-angle-building-triangle-thumbnail.png'/>
-        <Button  onClick={isOpen ? onClose : onOpen} size={'sm'} variant={'outline'}colorScheme='black' >Menue</Button>
+        <Button  onClick={isOpen ? onClose : onOpen} size={'sm'} variant={'outline'}colorScheme='black' >Menu</Button>
         </Flex>
 
         {isOpen && <VStack id="mob_menue">
