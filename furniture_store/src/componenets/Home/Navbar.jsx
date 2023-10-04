@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './nav.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { Box, Button, Flex, HStack, Heading, Image, VStack, useDisclosure } from '@chakra-ui/react';
+import { Box, Button, Flex, HStack, Heading, Image, Text, VStack, useDisclosure } from '@chakra-ui/react';
 
 
 export const Navbar = () => {
@@ -14,6 +14,7 @@ export const Navbar = () => {
 
   const access=JSON.parse(sessionStorage.getItem('Fur_user'))||''
   const name=JSON.parse(sessionStorage.getItem('userName'))||''
+  const city=JSON.parse(localStorage.getItem('city'))||''
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.pageYOffset;
@@ -48,6 +49,7 @@ export const Navbar = () => {
           <Link to={`/sofas`} className='abid-a' ><h3>Sofas</h3></Link>
           <Link to={'/case'} className='abid-a1'><h3>Cases</h3></Link>
           <Link to={'/other'} className='abid-a1'><h3>Others</h3></Link>
+          <Text fontSize={'xs'} id="cityname"> <i style={{ color: "orange" }} class="fa-solid fa-location-dot"></i>&nbsp;{city}</Text>
         </Box>
 
         <div className='abid-nav2'>

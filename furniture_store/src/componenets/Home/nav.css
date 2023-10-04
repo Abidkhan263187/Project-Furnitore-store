@@ -92,6 +92,15 @@ outline: none;
 #mob_nav{
     display: none;
 }
+#cityname{
+    position: absolute;
+    left: 1%;
+    top: 100%;
+    color: white;
+    background-color: #494949;
+    padding: 1px 10px;
+    border-radius: 10px;
+}
 
 @media (max-width: 767px) {
     /* CSS properties for small screens */
