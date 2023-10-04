@@ -12,21 +12,21 @@ import { useParams } from 'react-router-dom';
 import { Box, Text, border } from '@chakra-ui/react';
 
 const ItemDescription = () => {
-    const { id,product } = useParams()
+    const { id, product } = useParams()
 
-    const { single} = useSelector((store) => {
+    const { single } = useSelector((store) => {
         return store
     })
 
     const [selectedImage, setSelectedImage] = useState(null);
     const dispatch = useDispatch()
-    
+
 
     useEffect(() => {
         dispatch(getProduct(id, product))
     }, [])
-console.log(product);
-    const[obj,setObj]=useState({})
+    console.log(product);
+    const [obj, setObj] = useState({})
 
     useEffect(() => {
         setObj(single)
@@ -61,18 +61,18 @@ console.log(product);
     };
     useEffect(() => {
         window.scrollTo(0, 0); // Scroll to the top of the page on component mount
-      }, []);
+    }, []);
     const handleCart = () => {
 
-        const prod={
-            name:single.name,
-            price:single.price,
-            image:single.image,
-            mrp:single.mrp,
-            quantity:single.quantity,
-            discount:single.discount,
-            rating:single.rating,
-            
+        const prod = {
+            name: single.name,
+            price: single.price,
+            image: single.image,
+            mrp: single.mrp,
+            quantity: single.quantity,
+            discount: single.discount,
+            rating: single.rating,
+
         }
 
 
@@ -82,7 +82,7 @@ console.log(product);
     return (
         <>
             <div className="desc-container" style={{ width: '90%' }} >
-            
+
                 <div className="thumbnails " style={{}}>
                     <div className="thumbnail" onClick={() => handleThumbnailClick(single.image2)}>
                         <img src={single.image2} alt="Thumbnail 1" />
@@ -108,23 +108,23 @@ console.log(product);
                     <p className="details-price">${single.price}</p>
                     <s className="details-mrpprice">${single.mrp}</s>
 
-                 
+
                     <div className='details-discount'>
-                         <span className='details-disc'>{single.discount}%   Off</span>
-                         <Text className='abid-rating-div'>{single.rating}<i style={{paddingLeft:"3px"}} class="fa-solid fa-star"></i></Text>
-                          <Box className='abid-discount-div'><i class="fa-solid fa-otter"></i>   best Seller</Box>
+                        <span className='details-disc'>{single.discount}%   Off</span>
+                        <Text className='abid-rating-div'>{single.rating}<i style={{ paddingLeft: "3px" }} class="fa-solid fa-star"></i></Text>
+                        <Box className='abid-discount-div'><i class="fa-solid fa-otter"></i>   best Seller</Box>
                     </div>
-                  
+
                     <div className='details-dimension'>
-                     <Text fontSize={"lg"} fontWeight={"600"}>Bank Offers</Text>
-                     
-                     <Text fontSize={"sm"} mt={"5px"}> <i style={{color:"green"}} class="fa-solid fa-tag" ></i>  Special PriceGet extra 28% off (price inclusive of cashback/coupon) <span style={{color:" #cc5500"}}>T&C</span> </Text>
+                        <Text fontSize={"lg"} fontWeight={"600"}>Bank Offers</Text>
 
-                     <Text fontSize={"sm"} mt={"5px"}> <i style={{color:"green"}} class="fa-solid fa-tag"></i> Sign up for Flipkart Pay Later get Flipkart Gift Card worth  ₹1,000* <span style={{color:" #cc5500"}}>Know More</span> </Text>
+                        <Text fontSize={"sm"} mt={"5px"}> <i style={{ color: "green" }} class="fa-solid fa-tag" ></i>  Special PriceGet extra 28% off (price inclusive of cashback/coupon) <span style={{ color: " #cc5500" }}>T&C</span> </Text>
 
-                     <Text fontSize={"sm"} mt={"5px"}> <i style={{color:"green"}} class="fa-solid fa-tag"></i> Partner OfferBuy this product and get upto ₹250 Off <span style={{color:" #cc5500"}}> Know More</span></Text>
+                        <Text fontSize={"sm"} mt={"5px"}> <i style={{ color: "green" }} class="fa-solid fa-tag"></i> Sign up for Flipkart Pay Later get Flipkart Gift Card worth  ₹1,000* <span style={{ color: " #cc5500" }}>Know More</span> </Text>
 
-                     <Text fontSize={"sm"} mt={"5px"}> <i style={{color:"green"}} class="fa-solid fa-tag"></i> Bank OfferFlat ₹1,250 Off on HDFC Bank Credit Card ₹15,000 to ₹39,999 <span style={{color:" #cc5500"}}>T&C</span> </Text>
+                        <Text fontSize={"sm"} mt={"5px"}> <i style={{ color: "green" }} class="fa-solid fa-tag"></i> Partner OfferBuy this product and get upto ₹250 Off <span style={{ color: " #cc5500" }}> Know More</span></Text>
+
+                        <Text fontSize={"sm"} mt={"5px"}> <i style={{ color: "green" }} class="fa-solid fa-tag"></i> Bank OfferFlat ₹1,250 Off on HDFC Bank Credit Card ₹15,000 to ₹39,999 <span style={{ color: " #cc5500" }}>T&C</span> </Text>
                     </div>
 
                     <p className="details-description">

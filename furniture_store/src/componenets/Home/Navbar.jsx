@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './nav.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { Box, Button, Flex, HStack, Heading, Image, VStack, useDisclosure } from '@chakra-ui/react';
 
 
 export const Navbar = () => {
+
+  const dispatch=useDispatch()
+  const navigate=useNavigate()
   const [isScrolled, setIsScrolled] = useState(false);
-  const {access,name}=useSelector((store)=>{
-    return store;
-  })
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const access=JSON.parse(sessionStorage.getItem('Fur_user'))||''
+  const name=JSON.parse(sessionStorage.getItem('userName'))||''
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.pageYOffset;
@@ -27,32 +32,63 @@ export const Navbar = () => {
     };
   }, []);
 
+  const handleLogout=()=>{
+ sessionStorage.clear()
+ window.location.href='/'
+  }
+
   return (
     <>
       <div className={`abid-nav-container ${isScrolled ? 'sticky' : ''}`}>
-        <div className='abid-nav1'>
-          <Link to={"/"}><h2 className='nav-logo' style={{ border: "1px solid", width: "50px", background: "black", color: "white" }}><i className="fa-solid fa-m"></i></h2></Link>
+        <Box className='abid-nav1'>
+          <Image onClick={()=>navigate('/')} class="nav_logo" src='https://w7.pngwing.com/pngs/729/1006/png-transparent-furniture-logo-home-design-angle-building-triangle-thumbnail.png'/>
           <Link to={'/chairs'} className='abid-a' ><h3 id="h4">Chairs</h3></Link>
           <Link to={'/tables'} className='abid-a' ><h3>Tables</h3></Link>
           <Link className='abid-a'><h3>Lamps</h3></Link>
           <Link to={`/sofas`} className='abid-a' ><h3>Sofas</h3></Link>
           <Link to={'/case'} className='abid-a1'><h3>Cases</h3></Link>
           <Link to={'/other'} className='abid-a1'><h3>Others</h3></Link>
-        </div>
+        </Box>
+
         <div className='abid-nav2'>
-          <div className="abid-search-div">
-            <button style={{ background: "white", border: "none" }}> <i className="fa-solid fa-magnifying-glass"></i></button>
+          <Box className="abid-search-div">
+           
             <input type="search" placeholder='search' className='abid-serach-nav' />
-          </div>
+            <button style={{ border: "none" }}> <i id="symbol" className="fa-solid fa-magnifying-glass"></i></button>
+          </Box>
+          <Flex id="symbols_div">
           <Link to={'/fav'}><p><i className="fa-solid fa-heart"></i></p></Link>
           <Link className='shuffle'> <p><i className="fa-solid fa-shuffle"></i></p></Link>
           <Link to={'/cart'}> <p><i className="fa-sharp fa-solid fa-cart-shopping"></i></p></Link>
-          <Link to={'/signup'} ><p>{access?name:<i className="fa-solid fa-user"></i>}</p></Link>
-        </div>
-        <div className='abid-nav3'>
-          <Link><p><i className="fa-solid fa-bars"></i></p></Link>
-        </div>
+          <Link   ><p  >{  access ? <Button size={'sm'} colorScheme="transparent" color={'black'} onClick={handleLogout}><i class="fa-solid fa-right-from-bracket"></i>&nbsp; {name} </Button> : <Flex justifyContent={'space-between'}  alignItems={'center'} as ={Link}   to ="/login"><Heading size={'md'}>login</Heading>  <i style={{marginLeft:'20px'}} id="symbol_mob_nav" className="fa-solid fa-user"></i></Flex>}</p></Link>
+      
+          </Flex>
+         </div>
+
+        {/*  for mobile */}
+        <Flex id='mob_nav' w={'100%'} justifyContent={'space-between'}>
+        <Image onClick={()=>navigate('/')} class="nav_logo" src='https://w7.pngwing.com/pngs/729/1006/png-transparent-furniture-logo-home-design-angle-building-triangle-thumbnail.png'/>
+        <Button  onClick={isOpen ? onClose : onOpen} size={'sm'} variant={'outline'}colorScheme='black' >Menue</Button>
+        </Flex>
+
+        {isOpen && <VStack id="mob_menue">
+          <Link onClick={onClose} to={'/chairs'} className='abid-a' ><h3 id="h4">Chairs</h3></Link>
+          <Link onClick={onClose} to={'/tables'} className='abid-a' ><h3>Tables</h3></Link>
+          <Link onClick={onClose} className='abid-a'><h3>Lamps</h3></Link>
+          <Link onClick={onClose} to={`/sofas`} className='abid-a' ><h3>Sofas</h3></Link>
+          <Link onClick={onClose} to={'/case'} className='abid-a1'><h3>Cases</h3></Link>
+          <Link onClick={onClose} to={'/other'} className='abid-a1'><h3>Others</h3></Link>
+          <Link onClick={onClose} to={'/fav'} id='sybmol_mob'><p style={{color:"white"}}> Fav  <i id="symbol_mob_nav" className="fa-solid fa-heart"></i></p></Link>
+          <Link onClick={onClose} className='shuffle'> <p > <i id="symbol_mob_nav" className="fa-solid fa-shuffle"></i></p></Link>
+          <Link onClick={onClose} to={'/cart'}  id='sybmol_mob'> <p style={{color:"white"}}>  Cart <i id="symbol_mob_nav" className="fa-sharp fa-solid fa-cart-shopping"></i></p></Link>
+          <Link onClick={onClose}   ><p style={{color:"white"}} >{  access ? <Button colorScheme="transparent" onClick={handleLogout}><i class="fa-solid fa-right-from-bracket"></i>&nbsp; {name} </Button> : <Box>login <i id="symbol_mob_nav" className="fa-solid fa-user"></i></Box>}</p></Link>
+          </VStack>}
       </div>
+
+
+
+
+
     </>
   );
 };

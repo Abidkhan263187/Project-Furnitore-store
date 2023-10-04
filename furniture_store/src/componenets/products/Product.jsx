@@ -7,7 +7,7 @@ import { ProductCard } from './ProductCard';
 import './products.css';
 import { useSearchParams } from 'react-router-dom';
 import { Accordan } from './Accordan';
-import { Button, Heading, Progress } from '@chakra-ui/react';
+import { Box, Button, Heading, Progress } from '@chakra-ui/react';
 
 export const Product = () => {
   const [selectedFilters, setSelectedFilters] = useState([]);
@@ -47,7 +47,6 @@ export const Product = () => {
     window.scrollTo(0, 0); // Scroll to the top of the page on component mount
   }, []);
 
-console.log(cat,manufacturer,rating)
 
   return (
     <div className='abid-Product-main' style={{ border: '2px red' }}>
@@ -86,10 +85,10 @@ console.log(cat,manufacturer,rating)
     );
   })
 ) : (
-  <div style={{ width: "1000px" }}>
-    <Heading>Loading Please Wait....</Heading>
+  <Box  width= "100%" margin={["20% 0%","30% 80%"]}>
+    <Heading size={['sm','','','']}>Loading Please Wait....</Heading>
     <Progress size='xs' isIndeterminate />
-  </div>
+  </Box>
 )}
         </div>
       </div>
