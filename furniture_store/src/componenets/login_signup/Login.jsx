@@ -6,6 +6,8 @@ import Footer from "../Home/Footer";
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserAuthenticate } from "../../Redux/api";
 import { Authenticate, clientName, givePermmission } from "../../Redux/action";
+import { GoogleLoginButton } from "./GoogleLoginButton";
+import { Box } from "@chakra-ui/react";
 
 
 function LoginPage() {
@@ -75,7 +77,9 @@ function LoginPage() {
         <div className="form-group">
           <input type="submit" value="Sign In" />
           <div className="form-help">
-            <Link to="#">Forgot your password?</Link>
+            <Box w={'max-content'} m={'auto'} mb={'10px'}><GoogleLoginButton/></Box>
+            
+            <Link  to="#">Forgot your password?</Link>
             <Link style={{ marginLeft: "10px",color:"blue",textDecoration:"underline" }} to={'/signup'}> SignUp</Link>
           </div>
         </div>
