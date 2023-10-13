@@ -1,5 +1,6 @@
 <h2>Furniture Store</h2>
-Link: https://furniture-store-mu.vercel.app/
+
+[click here](https://furniture-store-mu.vercel.app/)
 
 <h2>Description:</h2>
 Welcome to the Furniture Store App repository! This is a modern and user-friendly web application designed to revolutionize your furniture shopping experience. Our app offers a seamless interface for browsing, selecting, and purchasing a wide range of high-quality furniture items. Say goodbye to traditional furniture shopping woes – explore our diverse collection, enjoy convenient features, and transform your living spaces with ease.
