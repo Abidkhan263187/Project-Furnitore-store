@@ -22,7 +22,7 @@ export const Accordan = ({ setQueryParam }) => {
   };
 
   return (
-    <Accordion defaultIndex={[0,1]} allowMultiple className='filter-acc'>
+    <Accordion defaultIndex={[0,1,2]} allowMultiple className='filter-acc'>
       <AccordionItem>
         <h2 className='head-filter-cat'>
           <AccordionButton>

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { getProductArray, getSortArray, applyFilters, getFilterArray } from '../../Redux/api'; // Import your API actions here
-import { useParams, useLocation, useNavigate } from 'react-router-dom';
+import { getProductArray, getSortArray, getFilterArray } from '../../Redux/api'; // Import your API actions here
+import { useParams } from 'react-router-dom';
 import { ProductCard } from './ProductCard';
 import './products.css';
 import { useSearchParams } from 'react-router-dom';

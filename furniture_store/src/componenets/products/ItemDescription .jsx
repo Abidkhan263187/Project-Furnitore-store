@@ -25,7 +25,7 @@ const ItemDescription = () => {
     useEffect(() => {
         dispatch(getProduct(id, product))
     }, [])
-    console.log(product);
+    // console.log(product);
     const [obj, setObj] = useState({})
 
     useEffect(() => {
@@ -135,7 +135,7 @@ const ItemDescription = () => {
                         </Link>
 
                         <Link>
-                            <button className="details-add-now"><i class="fa-solid fa-heart fa-2xl"></i></button>
+                            <button className="details-buy-now">Add To Fav</button>
                         </Link>
                     </div>
 

@@ -24,21 +24,15 @@ export const ProductCard = ({ image, id, name, rating, discount, price, mrp, qua
     alert("Item added into Cart")
   }
   return (
-    <Card className='abid-Product-Card' >
-      <CardBody>
+    <Card maxW='sm' className='abid-Product-Card' >
+      <CardBody id="card-body" >
         <div className='abid-card-img-div'>
           <Link to={`${id}`}>
-            <Image
-              src={image}
-              borderRadius='lg'
-             
-              
-
-            />
+            <Image src={image} borderRadius='lg'/>
           </Link>
         </div>
 
-        <Stack mt='2' spacing='1px' textAlign={"left"}>
+        <Stack mt='2' spacing='1px'  textAlign={"left"}>
           <Text fontWeight={"600"} color={"gray.600"} fontSize={["xs", "sm", "md", "xl"]}>{name}</Text>
           <Text color='yellow.600' fontWeight={"600"} fontSize={["xs", "sm", "lg", "lg"]}> ${price} </Text>
           <Text color='black.600' textDecoration={"line-through"} fontWeight={"600"} fontSize={["xs", "sm", "lg", "md"]} textDecorationColor={"line-through"}> ${mrp} </Text>
